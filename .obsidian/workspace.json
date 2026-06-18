@@ -1,0 +1,515 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🏛 Home.md",
+                "mode": "preview",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "🏛 Home"
+            }
+          },
+          {
+            "id": "bc74dcf7a5573c7c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "private/00. Inbox/MES agent 개발.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "MES agent 개발"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "08135b516c72b68c",
+    "type": "split",
+    "children": [
+      {
+        "id": "de8a566b4f7338d7",
+        "type": "tabs",
+        "dimension": 71.77777777777777,
+        "children": [
+          {
+            "id": "cbf962bbfe95fbae",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "faa9db38c120eceb",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "🏛 Tasks Kanban.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "list",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "🏛 Tasks Kanban"
+            }
+          },
+          {
+            "id": "2847d1e744ec1bbd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🏛 Categories.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "🏛 Categories"
+            }
+          },
+          {
+            "id": "66e2b28cdb1885d9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🏛 Categories Tree.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "🏛 Categories Tree"
+            }
+          }
+        ]
+      },
+      {
+        "id": "c14e6f641652781c",
+        "type": "tabs",
+        "dimension": 28.22222222222222,
+        "children": [
+          {
+            "id": "72274b1264a8d307",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "🏛 Home.md",
+                "options": {
+                  "collapse-filter": false,
+                  "search": "-file: (🏛 OR 비오)",
+                  "localJumps": 2,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": true,
+                  "showTags": true,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": false,
+                  "colorGroups": [
+                    {
+                      "query": "file:🏛",
+                      "color": {
+                        "a": 1,
+                        "rgb": 6513507
+                      }
+                    },
+                    {
+                      "query": "file:🏷",
+                      "color": {
+                        "a": 1,
+                        "rgb": 6513507
+                      }
+                    },
+                    {
+                      "query": "file:@",
+                      "color": {
+                        "a": 1,
+                        "rgb": 14289837
+                      }
+                    },
+                    {
+                      "query": "🏷",
+                      "color": {
+                        "a": 1,
+                        "rgb": 14400041
+                      }
+                    }
+                  ],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.7132754626224439,
+                  "close": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-git-fork",
+              "title": "Graph of 🏛 Home"
+            }
+          },
+          {
+            "id": "15f3bbd1be0cd65d",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 433.5
+  },
+  "right": {
+    "id": "95a4fe6ea2db0397",
+    "type": "split",
+    "children": [
+      {
+        "id": "f44b0c3c57e53b7e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c873954e28e27ec7",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "🏛 Tasks.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for 🏛 Tasks"
+            }
+          },
+          {
+            "id": "ba03c529d029c898",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "🏛 Tasks.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 🏛 Tasks"
+            }
+          },
+          {
+            "id": "1b2f456ae87b32da",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "private/00. Inbox/2026 SVP.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "2026 SVP 의 백링크"
+            }
+          },
+          {
+            "id": "cd2072c22a91a878",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "🏛 Expire•Subscription.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 🏛 Expire•Subscription"
+            }
+          },
+          {
+            "id": "9d2a47c6289e9cb9",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🏛 Home.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "🏛 Home"
+            }
+          },
+          {
+            "id": "d5593cbf07703706",
+            "type": "leaf",
+            "state": {
+              "type": "Strange New Worlds",
+              "state": {},
+              "icon": "file-digit",
+              "title": "Strange New Worlds"
+            }
+          },
+          {
+            "id": "186cb8ec7e2221c8",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
+          },
+          {
+            "id": "b96cc8051e394d81",
+            "type": "leaf",
+            "state": {
+              "type": "graph-analysis",
+              "state": {},
+              "icon": "GA-ICON",
+              "title": "Graph Analysis"
+            }
+          }
+        ],
+        "currentTab": 6
+      },
+      {
+        "id": "0a79c9d83abfb6da",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2eaca2ff6e4adaba",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": true,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "byModifiedTime"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3651fc765ae76569",
+            "type": "leaf",
+            "state": {
+              "type": "notebook-navigator",
+              "state": {},
+              "icon": "notebook",
+              "title": "Notebook Navigator"
+            }
+          },
+          {
+            "id": "1660a76d76878be3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "모든 속성"
+            }
+          },
+          {
+            "id": "9f6069391c2138d1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 357.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:Create new canvas": false,
+      "bases:Create new base": false,
+      "omnisearch:Omnisearch": false,
+      "homepage:Open homepage": false,
+      "graph:Open graph view": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false,
+      "translate:Open translation view": false,
+      "obsidian-book-search-plugin:Create new book note": false,
+      "obsidian42-brat:BRAT": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false,
+      "notebook-navigator:Notebook Navigator": false,
+      "switcher:Open quick switcher": false,
+      "obsidian-spaced-repetition:Review flashcards": false,
+      "periodic-notes:Open today": false
+    }
+  },
+  "active": "bc74dcf7a5573c7c",
+  "lastOpenFiles": [
+    "public/test.txt",
+    "public/새 텍스트 문서.txt",
+    "public/BiohPark-github-blog/_config.yml",
+    "public/BiohPark-github-blog/index.md",
+    "public/BiohPark-github-blog",
+    "public/git-blog/index.md",
+    "public/git-blog/_config.yml",
+    "public/git-blog",
+    "public/새 폴더",
+    "public/index.md",
+    "🏛 Home.md",
+    "새 텍스트 문서.txt",
+    "private/00. Inbox/MES agent 개발.md",
+    "🏛 Categories Tree.md",
+    "🏛 Categories.md",
+    "🏛 Home.md.tmp.52536.4b7931ac3c5b",
+    "🏛 Home.md.tmp.52536.0395a03ff3e5",
+    "private/00. Inbox/📖 100 Career.md",
+    "🏛 Tasks Kanban.md",
+    "🏛 Tasks.md",
+    "private/10. Calendar Notes/2026-W25.md",
+    "private/10. Calendar Notes/2026-06-18.md",
+    "private/00. Inbox/2026-06.md",
+    "private/00. Inbox/2026-W25.md",
+    "🏛 Expire•Subscription.md",
+    "🏛 Categories Tree.md.tmp.52536.abc0ab8c27b3",
+    "private/10. Calendar Notes/2026-06-17.md",
+    "private/00. Inbox/2025 해외주식 소득.md",
+    "private/10. Calendar Notes/2026-06.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Yearly Note.md.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Weekly Note.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Quartly Note.md.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Daily Note.md",
+    "private/10. Calendar Notes/2026-06-10.md",
+    "private/00. Inbox/제테크 관리.md",
+    "private/10. Calendar Notes/2026-06-16.md",
+    "private/80. References/81. Attachments/Pasted image 20260612054533.png",
+    "private/80. References/81. Attachments/20260505_111316.jpg",
+    "private/80. References/81. Attachments/20260505_111251.jpg",
+    "private/80. References/81. Attachments/Screenshot_20260502_142426_Samsung Notes.png",
+    "private/80. References/81. Attachments/Pasted image 20260429222337.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221133810.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131316.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131317.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131317 1.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131317 2.jpg"
+  ]
+}
