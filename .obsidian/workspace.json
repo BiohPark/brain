@@ -80,9 +80,32 @@
               "icon": "lucide-file",
               "title": "202606 옵시디언 지능화"
             }
+          },
+          {
+            "id": "9ccf077644522b48",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "202606 MES-ITSM 셋업.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "202606 MES-ITSM 셋업"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -154,16 +177,6 @@
             }
           },
           {
-            "id": "196e54dbcdfe898c",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
-            }
-          },
-          {
             "id": "2c8b342cc459947c",
             "type": "leaf",
             "state": {
@@ -173,8 +186,7 @@
               "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       },
       {
         "id": "65f91f28bd6933a3",
@@ -361,7 +373,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mes-ag",
+                "query": "itsm",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -444,11 +456,13 @@
       "realclaudian:Open Claudian": false
     }
   },
-  "active": "5380829b00d8ecb0",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "새 폴더",
     "private/00. Inbox/202606 옵시디언 지능화.md",
+    "🏛 Home.md",
+    "202606 MES-ITSM 셋업.md",
     "private/00. Inbox/MES-agent 개발.md",
+    "새 폴더",
     "private/80. References/81. Attachments/처우안내 비교표(박비오).xlsx",
     "agent/workflows/general/2026-06-11-001_state.json",
     "agent/workflows/general/2026-06-13-001_state.json",
@@ -458,8 +472,6 @@
     "agent/workflows/obsidian/2026-06-13-001.json",
     "agent/workflows/obsidian/2026-06-10-001.json",
     "agent/workflows/syncade/2026-06-10-001.json",
-    "agent/workflows/general/2026-06-13-001.json",
-    "🏛 Home.md",
     "🏷 invest.md",
     "agent/threads/general/2026-06-19-002.md",
     "agent/workflows/general/2026-06-19-002.md",
