@@ -1,0 +1,496 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🏛 Home.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "🏛 Home"
+            }
+          },
+          {
+            "id": "5380829b00d8ecb0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "private/00. Inbox/MES-agent 개발.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "MES-agent 개발"
+            }
+          },
+          {
+            "id": "44c2717f42b607cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "private/00. Inbox/202606 옵시디언 지능화.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "202606 옵시디언 지능화"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b55b125193ebdd9a",
+    "type": "split",
+    "children": [
+      {
+        "id": "ed9cbd8155d3d7f0",
+        "type": "tabs",
+        "dimension": 68.45637583892618,
+        "children": [
+          {
+            "id": "36e11904964d2316",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ac08ac23bd7a2d6d",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "🏛 Tasks Kanban.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "list",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "🏛 Tasks Kanban"
+            }
+          },
+          {
+            "id": "389ba47354db8661",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "🏛 Categories.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "🏛 Categories"
+            }
+          },
+          {
+            "id": "196e54dbcdfe898c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "2c8b342cc459947c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 4
+      },
+      {
+        "id": "65f91f28bd6933a3",
+        "type": "tabs",
+        "dimension": 31.543624161073826,
+        "children": [
+          {
+            "id": "a97481ab389c9975",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "🏛 Tasks.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 1,
+                  "close": false
+                }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Graph of 🏛 Tasks"
+            }
+          },
+          {
+            "id": "8f587917225f0124",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 458.5
+  },
+  "right": {
+    "id": "98e34de261fe700a",
+    "type": "split",
+    "children": [
+      {
+        "id": "abab4bbb81360994",
+        "type": "tabs",
+        "dimension": 57.47330960854092,
+        "children": [
+          {
+            "id": "9f9b8f6fdaba2810",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "🏛 Home.md"
+              },
+              "pinned": true,
+              "icon": "lucide-info",
+              "title": "File properties for 🏛 Home"
+            }
+          },
+          {
+            "id": "e67e6148987725cd",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "🏛 Home.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "pinned": true,
+              "icon": "lucide-list",
+              "title": "Outline of 🏛 Home"
+            }
+          },
+          {
+            "id": "8130308f819c3e69",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "🏛 Tasks Kanban.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 🏛 Tasks Kanban"
+            }
+          },
+          {
+            "id": "979a9523e11c14e1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "c5e62e00901aed28",
+            "type": "leaf",
+            "state": {
+              "type": "Strange New Worlds",
+              "state": {},
+              "icon": "file-digit",
+              "title": "Strange New Worlds"
+            }
+          },
+          {
+            "id": "b9bbb73d3f8d2731",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
+          },
+          {
+            "id": "55dd8cef0f6074f1",
+            "type": "leaf",
+            "state": {
+              "type": "graph-analysis",
+              "state": {},
+              "icon": "GA-ICON",
+              "title": "Graph Analysis"
+            }
+          },
+          {
+            "id": "95498f703b7d6468",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
+          }
+        ],
+        "currentTab": 7
+      },
+      {
+        "id": "e0e75e2511b3d166",
+        "type": "tabs",
+        "dimension": 42.52669039145908,
+        "children": [
+          {
+            "id": "19e33a8f591eb237",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "mes-ag",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "7ef306adc0530f7d",
+            "type": "leaf",
+            "state": {
+              "type": "notebook-navigator",
+              "state": {},
+              "icon": "notebook-navigator",
+              "title": "Notebook Navigator"
+            }
+          },
+          {
+            "id": "2cd1f57c56ca11a4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "4efdb248fb37c817",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 715.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "canvas:Create new canvas": false,
+      "bases:Create new base": false,
+      "omnisearch:Omnisearch": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "translate:Open translation view": false,
+      "obsidian-book-search-plugin:Create new book note": false,
+      "obsidian42-brat:BRAT": false,
+      "notebook-navigator:Notebook Navigator": false,
+      "random-note:Open random note": false,
+      "workspaces:Manage workspace layouts": false,
+      "graph:Open graph view": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-kanban:Create new board": false,
+      "templater-obsidian:Templater": false,
+      "switcher:Open quick switcher": false,
+      "homepage:Open homepage": false,
+      "obsidian-spaced-repetition:Review flashcards": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
+      "obsidian-git:Open Git source control": false,
+      "realclaudian:Open Claudian": false
+    }
+  },
+  "active": "5380829b00d8ecb0",
+  "lastOpenFiles": [
+    "새 폴더",
+    "private/00. Inbox/202606 옵시디언 지능화.md",
+    "private/00. Inbox/MES-agent 개발.md",
+    "private/80. References/81. Attachments/처우안내 비교표(박비오).xlsx",
+    "agent/workflows/general/2026-06-11-001_state.json",
+    "agent/workflows/general/2026-06-13-001_state.json",
+    "agent/workflows/general/2026-06-10-001_state.json",
+    "agent/workflows/general/2026-06-12-002_state.json",
+    "agent/workflows/general/2026-06-12-001_state.json",
+    "agent/workflows/obsidian/2026-06-13-001.json",
+    "agent/workflows/obsidian/2026-06-10-001.json",
+    "agent/workflows/syncade/2026-06-10-001.json",
+    "agent/workflows/general/2026-06-13-001.json",
+    "🏛 Home.md",
+    "🏷 invest.md",
+    "agent/threads/general/2026-06-19-002.md",
+    "agent/workflows/general/2026-06-19-002.md",
+    "agent/sessions/2026-06-19-005-엑셀-다양하게-컨트롤좀-해봐-너의-능력좀-테스트해보게.md",
+    "agent/sessions/2026-06-19-004-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
+    "agent/sessions/2026-06-19-002-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
+    "agent/sessions/2026-06-19-003-배경-작업-완료-read_excel-결과-sh.md",
+    "agent/sessions/2026-06-19-001-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
+    "agent/threads/general/2026-06-19-001.md",
+    "agent/workflows/general/2026-06-19-001.md",
+    "public/BiohPark-github-blog/index.md",
+    "private/10. Calendar Notes/2026-W25.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Yearly Note.md.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Quartly Note.md.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Montly Note.md.md",
+    "private/10. Calendar Notes/2026-06-18.md",
+    "private/10. Calendar Notes/2026-06-17.md",
+    "private/00. Inbox/2025 해외주식 소득.md",
+    "🏛 Categories Tree.md",
+    "🔍 카테고리별 노트.md",
+    "claude/_index.md",
+    "🏛 Categories.md",
+    "private/80. References/81. Attachments/Pasted image 20260612054533.png",
+    "private/80. References/81. Attachments/20260505_111316.jpg",
+    "private/80. References/81. Attachments/20260505_111251.jpg",
+    "private/80. References/81. Attachments/Screenshot_20260502_142426_Samsung Notes.png",
+    "private/80. References/81. Attachments/Pasted image 20260429222337.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131316.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131317.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131317 1.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131317 2.jpg",
+    "private/80. References/81. Attachments/Pasted image 20260221131316 1.jpg"
+  ]
+}

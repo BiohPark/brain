@@ -1,0 +1,22 @@
+{
+  "attachmentFolderPath": "private/80. References/81. Attachments",
+  "showUnsupportedFiles": true,
+  "newLinkFormat": "absolute",
+  "newFileLocation": "folder",
+  "tabSize": 2,
+  "useTab": false,
+  "foldIndent": true,
+  "smartIndentList": true,
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "userIgnoreFilters": [
+    "node_modules/",
+    "src/",
+    "out/"
+  ],
+  "readableLineLength": false,
+  "promptDelete": false,
+  "rightToLeft": false,
+  "showLineNumber": true,
+  "newFileFolderPath": "private/00. Inbox"
+}
