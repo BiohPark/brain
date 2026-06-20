@@ -6,6 +6,7 @@ Indexes:
   - "[[🏛 Utils]]"
 date_created: 2025-03-13T21:15:00
 date_modified: 2026-06-14T12:00:00+09:00
+modified: 2026-06-20T13:21:30+09:00
 ---
 
 > 📊 [[🏛 Categories Tree|시각화로 보기 →]]

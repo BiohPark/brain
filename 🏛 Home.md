@@ -7,8 +7,8 @@ Categories:
 Indexes:
   - "[[🏛 Utils]]"
 date_created: 2026-06-14T00:00:00+09:00
-date_modified: 2026-06-18T23:54:24+09:00
-modified: 2026-06-18T22:44:52+09:00
+date_modified: 2026-06-20T12:01:31+09:00
+modified: 2026-06-20T13:21:34+09:00
 ---
 
 ```dataviewjs

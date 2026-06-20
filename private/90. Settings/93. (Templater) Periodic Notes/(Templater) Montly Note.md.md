@@ -3,43 +3,19 @@ tags:
 Categories:
   - "[[📚730 Monthly]]"
 Indexes:
-date_created: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+date_created: 2026-06-19 23:15
 date_modified:
 ---
-<%*
-let month = moment(tp.file.title);
+# Invalid date
+[[Invalid date]] / [[Invalid date]]
 
-// # 2023 January
-tR += '# ' + month.format('YYYY MMMM') + '\n';
-
-// 2023 / Q1
-tR += '[[' + month.format('YYYY') + ']] / ';
-tR += '[[' + month.format('YYYY-[Q]Q|[Q]Q') + ']]\n\n';
-
-// ❮ December | January | February ❯
-tR += '❮ [[' + month.subtract(1, 'months').format('YYYY-MM|MMMM') + ']]';
-tR += ' | ' + month.add(1, 'months').format('MMMM') + ' | ';
-tR += '[[' + month.add(1, 'months').format('YYYY-MM|MMMM') + ']] ❯';
-month.subtract(1, 'months');
-tR += '\n';
-
-// Week 52 - Week 1 - Week 2 - Week 3 - Week 4 - Week 5
-const thisMonth = month.month();
-month.startOf('week');
-do {
-    tR += '[[' + month.format('YYYY-[W]ww|[Week] w') + ']]';
-    month.add(1, 'weeks');
-    if (month.month() == thisMonth) {
-        tR += ' - ';
-    }
-} while (month.month() == thisMonth);
-month.subtract(1, 'weeks');
-%>
+❮ [[Invalid date]] | Invalid date | [[Invalid date]] ❯
+[[Invalid date]]
 
 ---
 
 ### 당월 완료
 ```tasks
-done in <% tp.file.title %>
+done in (Templater) Montly Note.md
 ```
 ### Montly 기록

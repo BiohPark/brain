@@ -15,8 +15,8 @@
               "type": "markdown",
               "state": {
                 "file": "🏛 Home.md",
-                "mode": "preview",
-                "source": true,
+                "mode": "source",
+                "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
                   "collapseAll": false,
@@ -32,33 +32,8 @@
               "icon": "lucide-file",
               "title": "🏛 Home"
             }
-          },
-          {
-            "id": "bc74dcf7a5573c7c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "private/00. Inbox/MES agent 개발.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "MES agent 개발"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -152,6 +127,16 @@
               "icon": "lucide-file",
               "title": "🏛 Categories Tree"
             }
+          },
+          {
+            "id": "8094cfce7c465523",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
           }
         ],
         "currentTab": 2
@@ -244,7 +229,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 433.5
+    "width": 377.49999618530273
   },
   "right": {
     "id": "95a4fe6ea2db0397",
@@ -361,7 +346,7 @@
             }
           },
           {
-            "id": "b96cc8051e394d81",
+            "id": "fce4f04d9893efbe",
             "type": "leaf",
             "state": {
               "type": "graph-analysis",
@@ -369,9 +354,19 @@
               "icon": "GA-ICON",
               "title": "Graph Analysis"
             }
+          },
+          {
+            "id": "2f03d2fffac7302c",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 8
       },
       {
         "id": "0a79c9d83abfb6da",
@@ -437,11 +432,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5,
-    "collapsed": true
+    "width": 490.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "realclaudian:Open Claudian": false,
+      "obsidian-git:Open Git source control": false,
       "canvas:Create new canvas": false,
       "bases:Create new base": false,
       "omnisearch:Omnisearch": false,
@@ -464,12 +460,16 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "bc74dcf7a5573c7c",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "🏛 Categories Tree.md",
-    "private/00. Inbox/MES agent 개발.md",
-    "🏛 Categories Tree.md.tmp.52536.bb5994540225",
+    "202606 MES-ITSM 셋업.md",
     "🏛 Home.md",
+    "새 폴더",
+    "private/00. Inbox/MES-agent 개발.md",
+    "private/00. Inbox/MES agent 개발.md",
+    "private/00. Inbox/202606 옵시디언 지능화.md",
+    "🏛 Categories Tree.md",
+    "🏛 Categories Tree.md.tmp.52536.bb5994540225",
     "🏛 Categories Tree.md.tmp.52536.a330d71af0d2",
     "agent/workflows/general/2026-06-19-002_ledger.jsonl",
     "agent/workflows/general/2026-06-19-002_state.json",
@@ -486,7 +486,6 @@
     "agent/sessions/2026-06-19-001-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
     "agent/threads/general/2026-06-19-001.md",
     "agent/run-ledgers/general/2026-06-19-001/12fef28daa89.jsonl",
-    "agent/run-ledgers/general/2026-06-19-001/19beb07f776c.jsonl",
     "agent/workflows/general/2026-06-19-001.md",
     "🏛 Categories.md",
     "public/BiohPark-github-blog/index.md",
@@ -499,8 +498,6 @@
     "private/10. Calendar Notes/2026-06-18.md",
     "private/00. Inbox/2026-06.md",
     "private/00. Inbox/2026-W25.md",
-    "🏛 Expire•Subscription.md",
-    "private/10. Calendar Notes/2026-06-17.md",
     "private/80. References/81. Attachments/Pasted image 20260612054533.png",
     "private/80. References/81. Attachments/20260505_111316.jpg",
     "private/80. References/81. Attachments/20260505_111251.jpg",

@@ -211,7 +211,6 @@
       "key": "L"
     }
   ],
-  "editor:toggle-checklist-status": [],
   "smart-composer:open-new-chat": [
     {
       "modifiers": [
@@ -316,6 +315,24 @@
         "Alt"
       ],
       "key": "S"
+    }
+  ],
+  "editor:cycle-list-checklist": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "L"
+    }
+  ],
+  "global-search:open": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "D"
     }
   ]
 }

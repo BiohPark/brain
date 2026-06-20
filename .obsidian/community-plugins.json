@@ -5,6 +5,7 @@
   "highlightr-plugin",
   "url-into-selection",
   "note-refactor-obsidian",
+  "calendar",
   "periodic-notes",
   "dataview",
   "translate",
@@ -27,10 +28,11 @@
   "mousewheel-image-zoom",
   "obsidian-tasks-plugin",
   "notebook-navigator",
+  "heading-level-indent",
   "obsidian-outliner",
   "homepage",
   "frontmatter-modified-date",
   "obsidian-charts",
-  "calendar",
-  "heading-level-indent"
+  "realclaudian",
+  "obsidian-git"
 ]
