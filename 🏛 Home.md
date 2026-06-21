@@ -6,9 +6,11 @@ Categories:
   - "[[📚630 KnowledgeManagement]]"
 Indexes:
   - "[[🏛 Utils]]"
-date_created: 2026-06-14T00:00:00+09:00
-date_modified: 2026-06-20T12:01:31+09:00
+createdAt: 2026-06-14T00:00:00+09:00
+updatedAt: 2026-06-21T15:26:02+09:00
 modified: 2026-06-20T13:21:34+09:00
+date_modified: 2026-06-21T14:47:42+09:00
+date_created: 2026-06-14T23:20:24+09:00
 ---
 
 ```dataviewjs
@@ -17,12 +19,59 @@ const cur = dv.current().file.path;
 const total = pages.length;
 let links = 0; for (const p of pages) links += (p.file.outlinks ? p.file.outlinks.length : 0);
 const orphan = pages.where(p => (!p.Categories || !p.Categories.length) && (!p.Indexes || !p.Indexes.length)).length;
-const inbox = dv.pages('"private/00. Inbox"').length;
+let inboxFolder = 'private/00. Inbox';
+try { const ap = JSON.parse(await app.vault.adapter.read('.obsidian/app.json')); if (ap?.newFileFolderPath) inboxFolder = ap.newFileFolderPath; } catch(e){}
+const inbox = dv.pages('"' + inboxFolder + '"').length;
 const catSet = new Set();
 for (const p of pages) if (p.Categories) for (const c of p.Categories) catSet.add(c.path || String(c));
 const now = dv.luxon.DateTime.now();
 const today = now.setLocale('en').toFormat('yyyy-MM-dd (ccc)');
-const todayPath = '/10. Calendar Notes/' + now.toFormat('yyyy-MM-dd');
+let calFolder = '10. Calendar Notes';
+try { const pn = JSON.parse(await app.vault.adapter.read('.obsidian/plugins/periodic-notes/data.json')); if (pn?.daily?.folder) calFolder = pn.daily.folder; } catch(e){}
+const todayPath = calFolder + '/' + now.toFormat('yyyy-MM-dd');
+const todayNoteName = now.toFormat('yyyy-MM-dd');
+async function openOrCreatePeriodic(type, noteName, fallback) {
+  // Periodic Notes 명령을 우선 사용 → 템플릿 기반 열기/생성 보장 (오늘 기준 기간)
+  const cmdMap = { daily: 'periodic-notes:open-daily-note', weekly: 'periodic-notes:open-weekly-note', monthly: 'periodic-notes:open-monthly-note', quarterly: 'periodic-notes:open-quarterly-note', yearly: 'periodic-notes:open-yearly-note' };
+  const cmdId = cmdMap[type];
+  if (cmdId && app.commands.commands?.[cmdId]) { app.commands.executeCommandById(cmdId); return; }
+  // 폴백: 플러그인 명령 없을 때만 기존 노트/링크로
+  const file = app.metadataCache.getFirstLinkpathDest(noteName, cur);
+  if (file) { await app.workspace.getLeaf(false).openFile(file); return; }
+  app.workspace.openLinkText(fallback || noteName, cur, false);
+}
+const _shell = (() => { try { return require('electron').shell; } catch(e) { return null; } })();
+const _exec  = (() => { try { return require('child_process').exec; } catch(e) { return null; } })();
+
+// ── 🔧 빠른 설정: 링크/폴더/URL 추가·제거 ────────────────
+// type: 'note'    → Obsidian 내부 노트 링크
+// type: 'folder'  → 로컬 폴더 (탐색기 + 터미널)
+// type: 'url'     → 외부 URL (브라우저)
+// type: 'divider' → 구분선
+const FAVLINKS = [
+  { type: 'note',    label: '🏛 Guides',      href: '🏛 Vault Guides' },
+  { type: 'note',    label: '🏛 Tasks',        href: '🏛 Tasks' },
+  { type: 'note',    label: '🏛 Categories',   href: '🏛 Categories' },
+  { type: 'note',    label: '🏛 Cat.Tree',     href: '🏛 Categories Tree' },
+  { type: 'note',    label: '🏛 Utils',        href: '🏛 Utils' },
+  { type: 'note',    label: '🏛 Weekly',       href: '🏛 Weekly Notes' },
+  { type: 'note',    label: '🏛 Subscription', href: '🏛 Expire•Subscription' },
+  { type: 'note',    label: '🏷 Career',       href: '🏷 career' },
+  { type: 'note',    label: '🏷 Health',       href: '🏷 health' },
+  { type: 'note',    label: '🏷 Invest',       href: '🏷 invest' },
+  { type: 'note',    label: '🏷 Manual',       href: '🏷 Manual' },
+  { type: 'divider' },
+  { type: 'folder',  label: 'mes-agent', path: 'D:\\_Repositories\\mes-agent' },
+  { type: 'folder',  label: 'brain',     path: 'D:\\_Archives\\obsidian\\brain' },
+  { type: 'url',     label: 'mes-agent ↗', url: 'https://github.com/BiohPark/mes-agent' },
+];
+const favHTML = FAVLINKS.map(f => {
+  if (f.type === 'note')    return `<a class="internal-link" data-href="${f.href}">${f.label}</a>`;
+  if (f.type === 'divider') return `<div class="dash-favbar-divider"></div>`;
+  if (f.type === 'folder')  return `<span class="dash-favbar-chip"><a class="chip-text" data-local-exp="${f.path}">${f.label}</a><a class="chip-term" data-local-term="${f.path}">&gt;_</a></span>`;
+  if (f.type === 'url')     return `<span class="dash-favbar-chip"><a class="chip-url" data-url-ext="${f.url}">${f.label}</a></span>`;
+  return '';
+}).join('');
 
 const root = dv.el('div', '');
 root.innerHTML = `
@@ -34,28 +83,15 @@ root.innerHTML = `
     </div>
   </div>
   <div class="dash-favbar">
-    <a class="internal-link" data-href="🏛 Vault Guides">🏛 Guides</a>
-    <a class="internal-link" data-href="🏛 Tasks">🏛 Tasks</a>
-    <a class="internal-link" data-href="🏛 Categories">🏛 Categories</a>
-    <a class="internal-link" data-href="🏛 Categories Tree">🏛 Cat.Tree</a>
-    <a class="internal-link" data-href="🏛 Utils">🏛 Utils</a>
-    <a class="internal-link" data-href="🏛 Weekly Notes">🏛 Weekly</a>
-    <a class="internal-link" data-href="🏷 career">🏷 Career</a>
-    <a class="internal-link" data-href="🏷 health">🏷 Health</a>
-    <a class="internal-link" data-href="🏷 invest">🏷 Invest</a>
-    <a class="internal-link" data-href="🏷 Manual">🏷 Manual</a>
-  </div>
-  <div class="dash-quickstats">
-    <a class="dash-statchip internal-link" data-href="🔍 카테고리별 노트"><span class="num">${total}</span><span class="label">Total Notes</span></a>
-    <a class="dash-statchip" data-cmd="graph:open"><span class="num">${links}</span><span class="label">Links</span></a>
-    <a class="dash-statchip warn internal-link" data-href="🔍 고립·미분류 노트"><span class="num">${orphan}</span><span class="label">Orphans</span></a>
-    <a class="dash-statchip internal-link" data-href="🏛 Categories"><span class="num">${catSet.size}</span><span class="label">Categories</span></a>
-    <a class="dash-statchip warn" data-search='path:"00. Inbox"'><span class="num">${inbox}</span><span class="label">Inbox</span></a>
+    ${favHTML}
   </div>`;
 root.querySelectorAll('a.internal-link').forEach(a => a.onclick = (e) => { e.preventDefault(); app.workspace.openLinkText(a.dataset.href, cur, false); });
 root.querySelectorAll('[data-search]').forEach(a => a.onclick = (e) => { e.preventDefault(); const s = app.internalPlugins.getPluginById('global-search'); if (s) s.instance.openGlobalSearch(a.dataset.search); });
 root.querySelectorAll('[data-cmd]').forEach(a => a.onclick = (e) => { e.preventDefault(); app.commands.executeCommandById(a.dataset.cmd); });
-root.querySelectorAll('[data-daily]').forEach(a => a.onclick = (e) => { e.preventDefault(); app.workspace.openLinkText(a.dataset.daily, '', false); });
+root.querySelectorAll('[data-daily]').forEach(a => a.onclick = async (e) => { e.preventDefault(); await openOrCreatePeriodic('daily', todayNoteName, a.dataset.daily); });
+root.querySelectorAll('[data-local-exp]').forEach(a => a.onclick = (e) => { e.preventDefault(); e.stopPropagation(); _shell ? _shell.openPath(a.dataset.localExp) : new Notice('데스크탑 앱에서만 지원됩니다.'); });
+root.querySelectorAll('[data-local-term]').forEach(a => a.onclick = (e) => { e.preventDefault(); e.stopPropagation(); _exec ? _exec(`wt -d "${a.dataset.localTerm}"`) : new Notice('데스크탑 앱에서만 지원됩니다.'); });
+root.querySelectorAll('[data-url-ext]').forEach(a => a.onclick = (e) => { e.preventDefault(); e.stopPropagation(); _shell ? _shell.openExternal(a.dataset.urlExt) : new Notice('데스크탑 앱에서만 지원됩니다.'); });
 root.querySelectorAll('[data-capture]').forEach(b => b.onclick = async (e) => {
   e.preventDefault();
   // 1순위: Templater "새 노트 생성" 명령 (템플릿 선택 모달)
@@ -65,22 +101,56 @@ root.querySelectorAll('[data-capture]').forEach(b => b.onclick = async (e) => {
   if (cmd) { app.commands.executeCommandById(cmd); return; }
   // 폴백: Inbox에 타임스탬프 노트 직접 생성 후 열기
   const ts = now.toFormat('yyyy-MM-dd-HHmmss');
-  const path = `/private/00. Inbox/${ts}.md`;
-  const f = await app.vault.create(path, `---\ndate_created: ${now.toISO()}\ntags:\n---\n\n# \n`);
+  const path = `${inboxFolder}/${ts}.md`;
+  const f = await app.vault.create(path, `---\ncreatedAt: ${now.toISO()}\ntags:\n---\n\n# \n`);
   app.workspace.getLeaf(false).openFile(f);
 });
 ```
+# 🟢 운영 (Operate)
 
+```dataviewjs
+// 북마크 칩 스트립 (bookmarks.json) — Pulse 쪽으로 이동
+const cur = dv.current().file.path;
+const _shell = (() => { try { return require('electron').shell; } catch(e) { return null; } })();
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let bkHTML = '';
+try {
+  const bk = JSON.parse(await app.vault.adapter.read('.obsidian/bookmarks.json'));
+  const renderItems = arr => arr.map(item => {
+    if (item.type === 'file')   return `<a class="bk-item bk-file" data-href="${esc(item.path)}">📌 ${esc(item.title || item.path.split('/').pop().replace(/\.md$/, ''))}</a>`;
+    if (item.type === 'search') return `<a class="bk-item bk-search" data-q="${esc(item.query)}">🔍 ${esc(item.title || item.query)}</a>`;
+    if (item.type === 'folder') return `<a class="bk-item bk-folder" data-q='path:"${esc(item.path)}"'>📁 ${esc(item.title || item.path)}</a>`;
+    if (item.type === 'url')    return `<a class="bk-item bk-url" data-u="${esc(item.url)}">🌐 ${esc(item.title || item.url)}</a>`;
+    if (item.type === 'group')  return `<span class="bk-group-label">${esc(item.title || '')}</span>${renderItems(item.items || [])}`;
+    return '';
+  }).join('');
+  const items = bk.items || [];
+  bkHTML = items.length ? renderItems(items) : '<span class="hd-empty">북마크가 없습니다. Obsidian Bookmarks 패널에서 추가하세요.</span>';
+} catch(e) { bkHTML = `<span class="hd-empty">북마크 오류: ${esc(e.message)}</span>`; }
+
+const root = dv.el('div', '');
+root.innerHTML = `<div class="dash-bk-strip">${bkHTML}</div>`;
+root.querySelectorAll('[data-href]').forEach(a => a.onclick = e => { e.preventDefault(); app.workspace.openLinkText(a.dataset.href, cur, false); });
+root.querySelectorAll('[data-q]').forEach(a => a.onclick = e => { e.preventDefault(); const s = app.internalPlugins.getPluginById('global-search'); if (s) s.instance.openGlobalSearch(a.dataset.q); });
+root.querySelectorAll('[data-u]').forEach(a => a.onclick = e => { e.preventDefault(); _shell ? _shell.openExternal(a.dataset.u) : new Notice('데스크탑 앱에서만 지원됩니다.'); });
+```
 ## Pulse
-
 ```dataviewjs
 const pages = dv.pages('"/" AND -"agent"');
 const cur = dv.current().file.path;
 const DT = dv.luxon.DateTime;
 const now = DT.now();
+async function openOrCreatePeriodic(type, noteName, cur) {
+  const file = app.metadataCache.getFirstLinkpathDest(noteName, cur);
+  if (file) { await app.workspace.getLeaf(false).openFile(file); return; }
+  const cmdMap = { daily: 'periodic-notes:open-daily-note', weekly: 'periodic-notes:open-weekly-note', monthly: 'periodic-notes:open-monthly-note', quarterly: 'periodic-notes:open-quarterly-note', yearly: 'periodic-notes:open-yearly-note' };
+  const cmdId = cmdMap[type];
+  if (cmdId && app.commands.commands?.[cmdId]) app.commands.executeCommandById(cmdId);
+  else app.workspace.openLinkText(noteName, cur, false);
+}
 
 // ── Momentum (기존 로직) ──────────────────────────────
-function cd(p){ const d=p.date_created; if(!d) return p.file.ctime; return d.toFormat?d:DT.fromISO(String(d)); }
+function cd(p){ const d=p.createdAt; if(!d) return p.file.ctime; return d.toFormat?d:DT.fromISO(String(d)); }
 const wStart = now.startOf('week');
 const wPrev  = wStart.minus({weeks:1});
 const mStart = now.startOf('month');
@@ -88,13 +158,19 @@ const todayK = now.toFormat('yyyy-MM-dd');
 const weekNote = now.toFormat("kkkk-'W'WW");
 const monthNote = now.toFormat("yyyy-MM");
 const todayNote = now.toFormat("yyyy-MM-dd");
-let thisWeek=0,lastWeek=0,thisMonth=0,todayMod=0;
+const qStart      = now.startOf('quarter');
+const yStart      = now.startOf('year');
+const quarterNote = now.toFormat("yyyy-'Q'Q");
+const yearNote    = now.toFormat("yyyy");
+let thisWeek=0,lastWeek=0,thisMonth=0,todayMod=0,thisQuarter=0,thisYear=0;
 for(const p of pages){
   const c=cd(p); if(c&&c.isValid){
     if(c>=wStart) thisWeek++; else if(c>=wPrev) lastWeek++;
     if(c>=mStart) thisMonth++;
+    if(c>=qStart) thisQuarter++;
+    if(c>=yStart) thisYear++;
   }
-  const md=p.date_modified; const mk=md&&md.toFormat?md.toFormat('yyyy-MM-dd'):null;
+  const md=p.updatedAt; const mk=md&&md.toFormat?md.toFormat('yyyy-MM-dd'):null;
   if(mk===todayK) todayMod++;
 }
 const delta=thisWeek-lastWeek;
@@ -126,23 +202,25 @@ for(const p of pages){ for(const t of p.file.tasks){
 // ── Recently Edited (기존 dataview TABLE과 동일 조건, 10개) ──
 const recentArr=[];
 for(const p of pages){
-  const md=p.date_modified;
+  const md=p.updatedAt;
   if(md && md.toFormat && !p.file.folder.includes('30. Secrit Notes')) recentArr.push(p);
 }
-recentArr.sort((a,b)=>b.date_modified.toMillis()-a.date_modified.toMillis());
+recentArr.sort((a,b)=>b.updatedAt.toMillis()-a.updatedAt.toMillis());
 const recent=recentArr.slice(0,10);
 
 const root=dv.el('div','',{cls:'dash-pulse-strip'});
 root.innerHTML=`
   <div class="dash-pulse-seg dash-pulse-momentum">
     <div class="dash-pulse-label">Momentum</div>
-    <a class="mom-link internal-link" data-href="${weekNote}">
+    <a class="mom-link" data-periodic="weekly" data-note="${weekNote}">
       <div class="mom-num hero">${thisWeek}<span class="mom-delta ${dCls}">${dArrow}</span></div>
       <div class="mom-label">New This Week</div>
     </a>
     <div class="dash-pulse-mini">
-      <a class="mom-link internal-link" data-href="${monthNote}"><div class="mom-num mini">${thisMonth}</div><div class="mom-label">This Month</div></a>
-      <a class="mom-link internal-link" data-href="${todayNote}"><div class="mom-num mini">${todayMod}</div><div class="mom-label">Edited Today</div></a>
+      <a class="mom-link" data-periodic="daily" data-note="${todayNote}"><div class="mom-num mini">${todayMod}</div><div class="mom-label">Edited Today</div></a>
+      <a class="mom-link" data-periodic="monthly" data-note="${monthNote}"><div class="mom-num mini">${thisMonth}</div><div class="mom-label">This Month</div></a>
+      <a class="mom-link" data-periodic="quarterly" data-note="${quarterNote}"><div class="mom-num mini">${thisQuarter}</div><div class="mom-label">This Quarter</div></a>
+      <a class="mom-link" data-periodic="yearly" data-note="${yearNote}"><div class="mom-num mini">${thisYear}</div><div class="mom-label">This Year</div></a>
     </div>
   </div>
   <div class="dash-pulse-seg dash-pulse-tasks">
@@ -161,25 +239,168 @@ root.innerHTML=`
     <div class="dash-pulse-ticker">${recent.length ? recent.map(p=>`<a class="internal-link" data-href="${p.file.path}">${p.file.name}</a>`).join('<span class="dash-pulse-dot">·</span>') : '<span class="hd-empty">No recent edits</span>'}</div>
     <a class="card-link internal-link" data-href="🔍 최근 수정 노트">See all →</a>
   </div>`;
+root.querySelectorAll('[data-periodic]').forEach(a=>a.onclick=async(e)=>{e.preventDefault();await openOrCreatePeriodic(a.dataset.periodic,a.dataset.note,cur);});
 root.querySelectorAll('a.internal-link').forEach(a=>a.onclick=(e)=>{e.preventDefault();app.workspace.openLinkText(a.dataset.href,cur,false);});
 ```
-
 ```tasks
 not done
 sort by priority, due
 limit 10
 ```
 
-## Activity Heatmap
+## 🚀 Workspace
+<!-- 데이터 출처: Obsidian Bookmarks + project-manager 플러그인 (https://github.com/StepanKropachev/obsidian-pm) -->
+```dataviewjs
+const cur = dv.current().file.path;
+const DT = dv.luxon.DateTime;
+const today = DT.now().startOf('day');
+const _shell = (() => { try { return require('electron').shell; } catch(e) { return null; } })();
 
+// ── 설정: 플러그인 data.json에서 폴더·상태색·임박일수 읽기 (실패 시 폴백) ──
+let cfg = {};
+try { cfg = JSON.parse(await app.vault.adapter.read('.obsidian/plugins/project-manager/data.json')); } catch(e){}
+const folder = cfg.projectsFolder || 'private/20. Projects';
+const leadDays = cfg.notificationLeadDays ?? 2;
+const SM = {}; (cfg.statuses || []).forEach(s => SM[s.id] = s);
+const FALLBACK = {
+  'todo':        { label:'To Do',       color:'#8a94a0', complete:false },
+  'in-progress': { label:'In Progress', color:'#8b72be', complete:false },
+  'blocked':     { label:'Blocked',     color:'#c47070', complete:false },
+  'review':      { label:'In Review',   color:'#b8a06b', complete:false },
+  'done':        { label:'Done',        color:'#79b58d', complete:true  },
+  'cancelled':   { label:'Cancelled',   color:'#767491', complete:true  },
+};
+const ORDER = ['todo','in-progress','blocked','review','done','cancelled'];
+const meta = id => SM[id] || FALLBACK[id] || { label:id||'?', color:'#8a94a0', complete:false };
+const parseDue = d => { if(!d) return null; if(d.toFormat) return d.startOf('day'); const x=DT.fromISO(String(d)); return x.isValid ? x.startOf('day') : null; };
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// ── 데이터 수집 ──
+const pages = dv.pages(`"${folder}"`);
+const projects = pages.where(p => p['pm-project']).array();
+const allTasks = pages.where(p => p['pm-task']).array();
+
+const models = projects.map(pr => {
+  const tasks = allTasks.filter(t => t.projectId === pr.id);
+  const counts = {}; ORDER.forEach(s => counts[s] = 0);
+  let overdue = 0, dueSoon = 0, nextDue = null;
+  for (const t of tasks) {
+    const st = t.status || 'todo';
+    counts[st] = (counts[st] || 0) + 1;
+    const due = parseDue(t.due);
+    if (due && !meta(st).complete) {
+      if (due < today) overdue++;
+      else if (due <= today.plus({ days: leadDays })) dueSoon++;
+      if (!nextDue || due < nextDue) nextDue = due;
+    }
+  }
+  const total = tasks.filter(t => (t.status||'todo') !== 'cancelled').length;
+  const done = counts['done'];
+  const pct = total ? Math.round(done / total * 100) : 0;
+  const top = tasks.filter(t => !t.parentId);
+  const isComplete = total > 0 && done === total;
+  return { pr, counts, total, done, pct, active: total - done, overdue, dueSoon, nextDue, isComplete, top };
+});
+
+const activeM = models.filter(m => !m.isComplete);
+const doneM   = models.filter(m => m.isComplete);
+activeM.sort((a,b) =>
+  b.overdue - a.overdue ||
+  (a.nextDue ? a.nextDue.toMillis() : Infinity) - (b.nextDue ? b.nextDue.toMillis() : Infinity) ||
+  a.pct - b.pct);
+
+const sumTotal   = models.reduce((s,m) => s + m.total, 0);
+const sumDone    = models.reduce((s,m) => s + m.done, 0);
+const overallPct = sumTotal ? Math.round(sumDone / sumTotal * 100) : 0;
+const sumActive  = models.reduce((s,m) => s + m.active, 0);
+const sumOverdue = models.reduce((s,m) => s + m.overdue, 0);
+const sumSoon    = models.reduce((s,m) => s + m.dueSoon, 0);
+
+// ── 렌더 헬퍼 ──
+const dueBadge = m =>
+  m.overdue ? `<span class="dash-due overdue">🔴 지연 ${m.overdue}</span>` :
+  m.dueSoon ? `<span class="dash-due soon">🟠 임박 ${m.dueSoon}</span>` :
+  m.nextDue ? `<span class="dash-due">📅 ${m.nextDue.toFormat('MM/dd')}</span>` : '';
+
+const segBar = m => {
+  const segs = ORDER.filter(s => s !== 'cancelled' && m.counts[s] > 0).map(s => {
+    const mt = meta(s);
+    return `<span class="dash-seg" style="flex:${m.counts[s]};background:${mt.color}" title="${esc(mt.label)}: ${m.counts[s]}"></span>`;
+  }).join('');
+  return `<div class="dash-bar-track dash-seg-track">${segs || '<span class="dash-seg" style="flex:1;background:var(--background-modifier-border)"></span>'}</div>`;
+};
+
+const pills = m => ORDER.filter(s => m.counts[s] > 0).map(s => {
+  const mt = meta(s);
+  return `<span class="dash-pill" style="--pc:${mt.color}">${esc(mt.label)} <b>${m.counts[s]}</b></span>`;
+}).join('');
+
+const taskRows = m => m.top.map(t => {
+  const mt = meta(t.status || 'todo');
+  const due = parseDue(t.due);
+  const dtxt = due ? `<span class="trow-due">${due.toFormat('MM/dd')}</span>` : '';
+  const tic = t.type === 'milestone' ? '◆ ' : '';
+  return `<div class="dash-proj-trow" data-task="${esc(t.file.path)}"><span class="trow-dot" style="background:${mt.color}" title="${esc(mt.label)}"></span><span class="trow-title">${tic}${esc(t.title || t.file.name)}</span>${dtxt}</div>`;
+}).join('') || '<div class="hd-empty">하위 task 없음</div>';
+
+const card = (m, complete) => {
+  const pr = m.pr;
+  return `<div class="dash-card dash-proj${complete ? ' is-complete' : ''}" style="--proj-color:${pr.color || 'var(--d-purple)'}">
+    <div class="dash-proj-head">
+      <span class="dash-proj-dot"></span>
+      <a class="card-title dash-proj-title" data-href="${esc(pr.file.path)}">${esc(pr.icon || '📁')} ${esc(pr.title || pr.file.name)}</a>
+      ${dueBadge(m)}
+    </div>
+    <div class="dash-proj-bar">${segBar(m)}<span class="dash-proj-pct">${m.pct}%<small>${m.done}/${m.total}</small></span></div>
+    <div class="dash-proj-pills">${pills(m)}</div>
+    <details class="dash-proj-details"><summary>task ${m.top.length}개</summary><div class="dash-proj-tasklist">${taskRows(m)}</div></details>
+  </div>`;
+};
+
+// ── 프로젝트 출력 ──
+let projHTML;
+if (!projects.length) {
+  projHTML = `<div class="hd-empty">프로젝트가 없습니다. <a class="card-link" data-cmd="project-manager:open-projects">📋 보드 열기</a></div>`;
+} else {
+  projHTML = `
+    <div class="dash-proj-actionbar">
+      <a class="card-link" data-cmd="project-manager:open-projects">📋 보드 열기</a>
+      <a class="card-link" data-cmd="project-manager:open-projects">＋ 새 프로젝트</a>
+    </div>
+    <div class="dash-quickstats">
+      <a class="dash-statchip" data-cmd="project-manager:open-projects"><span class="num">${models.length}</span><span class="label">Projects</span></a>
+      <a class="dash-statchip" data-cmd="project-manager:open-projects"><span class="num">${overallPct}%</span><span class="label">Overall</span></a>
+      <a class="dash-statchip" data-cmd="project-manager:open-projects"><span class="num">${sumOverdue}</span><span class="label">Overdue</span></a>
+      <a class="dash-statchip" data-cmd="project-manager:open-projects"><span class="num">${sumActive}</span><span class="label">Active Tasks</span></a>
+      <a class="dash-statchip" data-cmd="project-manager:open-projects"><span class="num">${sumSoon}</span><span class="label">Due ≤${leadDays}d</span></a>
+    </div>
+    <div class="dash-grid dash-proj-grid">${activeM.map(m => card(m, false)).join('')}</div>
+    ${doneM.length ? `<details class="dash-proj-done"><summary>✅ 완료·취소 ${doneM.length}개</summary><div class="dash-grid dash-proj-grid">${doneM.map(m => card(m, true)).join('')}</div></details>` : ''}`;
+}
+
+const root = dv.el('div', '');
+root.innerHTML = `${projHTML}`;
+
+root.querySelectorAll('[data-href]').forEach(a => a.onclick = e => { e.preventDefault(); app.workspace.openLinkText(a.dataset.href, cur, false); });
+root.querySelectorAll('[data-task]').forEach(a => a.onclick = e => { e.preventDefault(); app.workspace.openLinkText(a.dataset.task, cur, false); });
+root.querySelectorAll('[data-cmd]').forEach(a => a.onclick = e => { e.preventDefault(); const id = a.dataset.cmd; if (app.commands.commands?.[id]) app.commands.executeCommandById(id); else new Notice('명령을 찾을 수 없습니다: ' + id); });
+root.querySelectorAll('[data-q]').forEach(a => a.onclick = e => { e.preventDefault(); const s = app.internalPlugins.getPluginById('global-search'); if (s) s.instance.openGlobalSearch(a.dataset.q); });
+root.querySelectorAll('[data-u]').forEach(a => a.onclick = e => { e.preventDefault(); _shell ? _shell.openExternal(a.dataset.u) : new Notice('데스크탑 앱에서만 지원됩니다.'); });
+```
+
+# 🔵 회고 (Reflect)
+
+## Activity Heatmap
 ```dataviewjs
 const pages = dv.pages('"/" AND -"agent"');
 const cur = dv.current().file.path;
 const DT = dv.luxon.DateTime;
+let calFolder = '10. Calendar Notes';
+try { const pn = JSON.parse(await app.vault.adapter.read('.obsidian/plugins/periodic-notes/data.json')); if (pn?.daily?.folder) calFolder = pn.daily.folder; } catch(e){}
 function key(d){ if(!d) return null; if(d.toFormat) return d.toFormat('yyyy-MM-dd'); const x=DT.fromISO(String(d)); return x.isValid?x.toFormat('yyyy-MM-dd'):null; }
 const counts={}, byDay={};
 for(const p of pages){
-  const k = key(p.date_modified) || key(p.date_created) || key(p.file.mtime);
+  const k = key(p.updatedAt) || key(p.createdAt) || key(p.file.mtime);
   if(!k) continue;
   counts[k]=(counts[k]||0)+1;
   if(!p.file.folder.includes('30. Secrit Notes')) (byDay[k]=byDay[k]||[]).push(p);
@@ -230,7 +451,7 @@ root.querySelector('.dash-heatmap').addEventListener('click',(e)=>{
   const cell=e.target.closest('.dash-hm-cell'); if(!cell||!cell.dataset.date) return;
   const ds=cell.dataset.date;
   const list=byDay[ds]||[];
-  const dailyPath='/10. Calendar Notes/'+ds;
+  const dailyPath=calFolder+'/'+ds;
   let h=`<div class="hd-head">📅 ${ds} <span class="hd-daily" data-daily="${dailyPath}">open daily note →</span></div>`;
   h += list.length
     ? '<ul>'+list.map(p=>`<li><a class="internal-link" data-href="${p.file.path}">${p.file.name}</a></li>`).join('')+'</ul>'
@@ -240,7 +461,31 @@ root.querySelector('.dash-heatmap').addEventListener('click',(e)=>{
   detail.querySelectorAll('[data-daily]').forEach(a=>a.onclick=(ev)=>{ev.preventDefault();app.workspace.openLinkText(a.dataset.daily,'',false);});
 });
 ```
+```dataviewjs
+const pages = dv.pages('"/" AND -"agent"');
+const cur = dv.current().file.path;
+const total = pages.length;
+let links = 0; for (const p of pages) links += (p.file.outlinks ? p.file.outlinks.length : 0);
+const orphan = pages.where(p => (!p.Categories || !p.Categories.length) && (!p.Indexes || !p.Indexes.length)).length;
+const catSet = new Set();
+for (const p of pages) if (p.Categories) for (const c of p.Categories) catSet.add(c.path || String(c));
+let inboxFolder = 'private/00. Inbox';
+try { const ap = JSON.parse(await app.vault.adapter.read('.obsidian/app.json')); if (ap?.newFileFolderPath) inboxFolder = ap.newFileFolderPath; } catch(e){}
+const inbox = dv.pages('"' + inboxFolder + '"').length;
 
+const root = dv.el('div', '');
+root.innerHTML = `
+  <div class="dash-quickstats">
+    <a class="dash-statchip internal-link" data-href="🔍 카테고리별 노트"><span class="num">${total}</span><span class="label">Total Notes</span></a>
+    <a class="dash-statchip" data-cmd="graph:open"><span class="num">${links}</span><span class="label">Links</span></a>
+    <a class="dash-statchip warn internal-link" data-href="🔍 고립·미분류 노트"><span class="num">${orphan}</span><span class="label">Orphans</span></a>
+    <a class="dash-statchip internal-link" data-href="🏛 Categories"><span class="num">${catSet.size}</span><span class="label">Categories</span></a>
+    <a class="dash-statchip warn" data-search='path:"${inboxFolder}"'><span class="num">${inbox}</span><span class="label">Inbox</span></a>
+  </div>`;
+root.querySelectorAll('a.internal-link').forEach(a => a.onclick = (e) => { e.preventDefault(); app.workspace.openLinkText(a.dataset.href, cur, false); });
+root.querySelectorAll('[data-search]').forEach(a => a.onclick = (e) => { e.preventDefault(); const s = app.internalPlugins.getPluginById('global-search'); if (s) s.instance.openGlobalSearch(a.dataset.search); });
+root.querySelectorAll('[data-cmd]').forEach(a => a.onclick = (e) => { e.preventDefault(); app.commands.executeCommandById(a.dataset.cmd); });
+```
 ## Note Growth
 
 ```dataviewjs
@@ -251,7 +496,7 @@ const DT = dv.luxon.DateTime;
 const monthly={}, mod={}, linksByMonth={}, orphanByMonth={}, catMonthly={}, dailyByMonth={};
 const weekdayCnt=[0,0,0,0,0,0,0];   // 월..일
 for(const p of pages){
-  const cdt = (p.date_created && p.date_created.toFormat) ? p.date_created : (p.file.ctime||null);
+  const cdt = (p.createdAt && p.createdAt.toFormat) ? p.createdAt : (p.file.ctime||null);
   const cm = cdt ? cdt.toFormat('yyyy-MM') : null;
   if(cm){
     monthly[cm]=(monthly[cm]||0)+1;
@@ -260,7 +505,7 @@ for(const p of pages){
     if(p.Categories) for(const c of p.Categories){ const nm=(c.path||String(c)).split('/').pop().replace(/\.md$/,''); (catMonthly[nm]=catMonthly[nm]||{}); catMonthly[nm][cm]=(catMonthly[nm][cm]||0)+1; }
     if(cdt.weekday) weekdayCnt[cdt.weekday-1]++;
   }
-  const md=(p.date_modified&&p.date_modified.toFormat)?p.date_modified:null;
+  const md=(p.updatedAt&&p.updatedAt.toFormat)?p.updatedAt:null;
   const mm=md?md.toFormat('yyyy-MM'):null; if(mm) mod[mm]=(mod[mm]||0)+1;
   if(/^\d{4}-\d{2}-\d{2}$/.test(p.file.name)){ const dm=p.file.name.slice(0,7); dailyByMonth[dm]=(dailyByMonth[dm]||0)+1; }   // 데일리 노트
 }

@@ -52,6 +52,28 @@
   margin: 1.4rem 0 .7rem;
 }
 
+/* ── 밴드 구분선 (운영 / 회고) ───────────────────────── */
+.dashboard h1 {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  font-size: .82em;
+  font-weight: 800;
+  letter-spacing: .14em;
+  color: var(--text-muted);
+  border: none;
+  margin: 2.2rem 0 .4rem;
+}
+.dashboard h1::before,
+.dashboard h1::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--background-modifier-border);
+}
+/* 밴드 바로 다음 h2 는 위 여백을 줄여 밴드에 붙임 */
+.dashboard h1 + h2 { margin-top: .6rem; }
+
 /* ── Header ─────────────────────────────────────────── */
 .dash-header {
   display: flex;
@@ -458,7 +480,15 @@
 }
 .dash-pulse-momentum .mom-num.hero { font-size: 2.1em; }
 .dash-pulse-momentum .mom-num.mini { font-size: 1.1em; }
-.dash-pulse-mini { display: flex; gap: 1rem; margin-top: .55rem; }
+.dash-pulse-momentum { container-type: inline-size; }
+.dash-pulse-mini { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .55rem; }
+.dash-pulse-mini > a.mom-link { flex: 1 1 auto; min-width: 0; }
+@container (max-width: 280px) {
+  .dash-pulse-mini > a.mom-link {
+    flex: 1 1 calc(50% - .3rem);
+    max-width: calc(50% - .3rem);
+  }
+}
 .dash-pulse-tasks .dash-taskbars { margin-top: 0; }
 .dash-pulse-tasks .dash-taskpill { min-width: 3.6rem; padding: .55rem .4rem; }
 .dash-pulse-tasks .tnum { font-size: 1.5em; }
@@ -582,6 +612,67 @@ a.mom-link:hover .mom-label { color: var(--text-normal); }
 /* ── Utility ─────────────────────────────────────────── */
 .clickable { cursor: pointer; }
 
+/* ── Favbar 구분선 + 분할 칩 (로컬폴더/터미널) ─────── */
+.dash-favbar-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--background-modifier-border);
+  border: none;
+  margin: .05rem 0;
+}
+.dash-favbar-chip {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 999px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  overflow: hidden;
+  transition: border-color .18s, transform .1s;
+  cursor: default;
+}
+.dash-favbar-chip:hover {
+  transform: translateY(-1px);
+  border-color: var(--d-amber);
+}
+/* base reset — .dash-favbar a 규칙 override */
+.dash-favbar-chip .chip-text,
+.dash-favbar-chip .chip-term {
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  font-size: .8em;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: color .18s, background .18s;
+  white-space: nowrap;
+}
+/* hover reset — .dash-favbar a:hover transform override */
+.dash-favbar-chip .chip-text:hover,
+.dash-favbar-chip .chip-term:hover {
+  transform: none;
+  border-color: transparent;
+}
+.dash-favbar-chip .chip-text {
+  padding: .28rem .55rem .28rem .85rem;
+}
+.dash-favbar-chip .chip-text:hover {
+  color: var(--d-amber);
+  background: rgba(230,179,92,.12);
+}
+.dash-favbar-chip .chip-term {
+  padding: .28rem .75rem .28rem .5rem;
+  border-left: 1px solid var(--background-modifier-border);
+  font-family: var(--font-monospace);
+  font-size: .85em;
+  color: var(--text-faint);
+  letter-spacing: .03em;
+}
+.dash-favbar-chip .chip-term:hover {
+  color: var(--d-teal);
+  background: rgba(105,200,255,.12);
+}
+
 /* ── 모바일 (≤480px) ─────────────────────────────────── */
 @media (max-width: 480px) {
   .dashboard .markdown-preview-view,
@@ -601,4 +692,162 @@ a.mom-link:hover .mom-label { color: var(--text-normal); }
   .dash-bar-row { grid-template-columns: 92px 1fr 30px; font-size: .74em; }
   .dash-hm-months { font-size: .58em; }
   .hm-wd { font-size: .55em; }
+}
+
+/* ── 🚀 Projects (project-manager) ────────────────────── */
+.dash-proj-actionbar {
+  display: flex;
+  gap: .6rem;
+  margin: .1rem 0 .7rem;
+}
+.dash-proj-grid { margin-bottom: 0; }
+@media (min-width: 980px) {
+  .dash-proj-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.dash-card.dash-proj {
+  border-left: 3px solid var(--proj-color, var(--d-purple));
+  padding: .8rem .95rem .7rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.dash-card.dash-proj.is-complete { opacity: .55; }
+.dash-card.dash-proj.is-complete:hover { opacity: .85; }
+
+.dash-proj-head {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+.dash-proj-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  background: var(--proj-color, var(--d-purple));
+  box-shadow: 0 0 8px -1px var(--proj-color, var(--d-purple));
+}
+.dash-proj-title {
+  flex: 1; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  cursor: pointer;
+}
+.dash-proj-title:hover { color: var(--d-blue) !important; text-decoration: underline; }
+
+/* 세그먼트 진행률 바 */
+.dash-proj-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: .55rem;
+}
+.dash-seg-track { height: 9px; }
+.dash-seg { display: block; height: 100%; min-width: 2px; transition: flex .35s ease; }
+.dash-seg:first-child { border-radius: 5px 0 0 5px; }
+.dash-seg:last-child  { border-radius: 0 5px 5px 0; }
+.dash-proj-pct {
+  font-size: .8em; font-weight: 700; color: var(--text-normal);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.dash-proj-pct small { font-weight: 400; color: var(--text-faint); margin-left: .25rem; }
+
+/* due 배지 */
+.dash-due {
+  font-size: .68em; font-weight: 600;
+  padding: .12rem .45rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: var(--background-modifier-border);
+  white-space: nowrap;
+}
+.dash-due.overdue { color: var(--d-red);   background: rgba(239,122,147,.16); }
+.dash-due.soon    { color: var(--d-amber); background: rgba(230,179,92,.16); }
+
+/* 상태 칩 */
+.dash-proj-pills { display: flex; flex-wrap: wrap; gap: .3rem; }
+.dash-pill {
+  font-size: .68em;
+  padding: .1rem .45rem;
+  border-radius: 6px;
+  color: var(--pc, var(--text-muted));
+  background: color-mix(in srgb, var(--pc, var(--text-muted)) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pc, var(--text-muted)) 32%, transparent);
+}
+.dash-pill b { font-weight: 800; }
+
+/* 펼침 task 목록 */
+.dash-proj-details > summary {
+  font-size: .72em; color: var(--text-faint);
+  cursor: pointer; list-style: none;
+  padding: .15rem 0;
+}
+.dash-proj-details > summary:hover { color: var(--d-blue); }
+.dash-proj-details[open] > summary { color: var(--text-muted); }
+.dash-proj-tasklist { display: flex; flex-direction: column; gap: .15rem; margin-top: .25rem; }
+.dash-proj-trow {
+  display: flex; align-items: center; gap: .4rem;
+  font-size: .76em; color: var(--text-muted);
+  padding: .15rem .3rem; border-radius: 5px;
+  cursor: pointer; transition: background .12s;
+}
+.dash-proj-trow:hover { background: rgba(122,162,247,.1); color: var(--text-normal); }
+.trow-dot { width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto; }
+.trow-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trow-due { font-size: .9em; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+
+/* 완료/취소 묶음 토글 */
+.dash-proj-done > summary {
+  font-size: .8em; color: var(--text-faint);
+  cursor: pointer; margin: .6rem 0 .5rem;
+}
+.dash-proj-done > summary:hover { color: var(--d-green); }
+
+/* ── 🚀 Workspace: 북마크 칩 스트립 + 구분선 ───────────── */
+.dash-bk-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  align-items: center;
+}
+.dash-bk-strip .bk-item {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  font-size: .76em;
+  line-height: 1.2;
+  padding: .22rem .55rem;
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: transform .12s ease, color .12s ease, border-color .12s ease;
+}
+.dash-bk-strip .bk-item:hover {
+  color: var(--text-normal);
+  border-color: var(--d-blue);
+  transform: translateY(-1px);
+}
+.dash-bk-strip .bk-file:hover   { border-color: var(--d-blue); }
+.dash-bk-strip .bk-search:hover { border-color: var(--d-purple); }
+.dash-bk-strip .bk-folder:hover { border-color: var(--d-amber); }
+.dash-bk-strip .bk-url:hover    { border-color: var(--d-green); }
+.dash-bk-strip .bk-group-label {
+  font-size: .68em;
+  font-weight: 700;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 .15rem 0 .35rem;
+}
+.dash-bk-strip .hd-empty { font-size: .78em; }
+
+.dash-ws-divider {
+  height: 1px;
+  background: var(--background-modifier-border);
+  margin: .8rem 0;
 }

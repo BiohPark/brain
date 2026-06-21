@@ -15,8 +15,8 @@
               "type": "markdown",
               "state": {
                 "file": "🏛 Home.md",
-                "mode": "source",
-                "source": false,
+                "mode": "preview",
+                "source": true,
                 "backlinks": true,
                 "backlinkOpts": {
                   "collapseAll": false,
@@ -129,7 +129,17 @@
             }
           },
           {
-            "id": "8094cfce7c465523",
+            "id": "fed1e8f13a98a09a",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "git-view"
+            }
+          },
+          {
+            "id": "b02dead45b05d215",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -139,7 +149,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "c14e6f641652781c",
@@ -229,7 +239,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 377.49999618530273
+    "width": 290.49999618530273,
+    "collapsed": true
   },
   "right": {
     "id": "95a4fe6ea2db0397",
@@ -238,6 +249,7 @@
       {
         "id": "f44b0c3c57e53b7e",
         "type": "tabs",
+        "dimension": 75.25458248472505,
         "children": [
           {
             "id": "c873954e28e27ec7",
@@ -300,32 +312,6 @@
             }
           },
           {
-            "id": "9d2a47c6289e9cb9",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "🏛 Home.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "🏛 Home"
-            }
-          },
-          {
             "id": "d5593cbf07703706",
             "type": "leaf",
             "state": {
@@ -346,16 +332,6 @@
             }
           },
           {
-            "id": "fce4f04d9893efbe",
-            "type": "leaf",
-            "state": {
-              "type": "graph-analysis",
-              "state": {},
-              "icon": "GA-ICON",
-              "title": "Graph Analysis"
-            }
-          },
-          {
             "id": "2f03d2fffac7302c",
             "type": "leaf",
             "state": {
@@ -364,13 +340,24 @@
               "icon": "bot",
               "title": "Claudian"
             }
+          },
+          {
+            "id": "102a8ef54191cdf3",
+            "type": "leaf",
+            "state": {
+              "type": "graph-analysis",
+              "state": {},
+              "icon": "GA-ICON",
+              "title": "Graph Analysis"
+            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 6
       },
       {
         "id": "0a79c9d83abfb6da",
         "type": "tabs",
+        "dimension": 24.745417515274948,
         "children": [
           {
             "id": "2eaca2ff6e4adaba",
@@ -432,12 +419,14 @@
       }
     ],
     "direction": "horizontal",
-    "width": 490.5
+    "width": 580.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "project-manager:Project manager": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
       "realclaudian:Open Claudian": false,
-      "obsidian-git:Open Git source control": false,
       "canvas:Create new canvas": false,
       "bases:Create new base": false,
       "omnisearch:Omnisearch": false,
@@ -462,42 +451,42 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "202606 MES-ITSM 셋업.md",
     "🏛 Home.md",
-    "새 폴더",
     "private/00. Inbox/MES-agent 개발.md",
-    "private/00. Inbox/MES agent 개발.md",
-    "private/00. Inbox/202606 옵시디언 지능화.md",
-    "🏛 Categories Tree.md",
-    "🏛 Categories Tree.md.tmp.52536.bb5994540225",
-    "🏛 Categories Tree.md.tmp.52536.a330d71af0d2",
-    "agent/workflows/general/2026-06-19-002_ledger.jsonl",
-    "agent/workflows/general/2026-06-19-002_state.json",
-    "agent/workflows/general/2026-06-19-002.md",
-    "agent/run-ledgers/general/2026-06-19-002/b3548e2ad04c.jsonl",
-    "agent/run-ledgers/general/2026-06-19-002",
-    "agent/transcripts/general/2026-06-19-002.jsonl",
-    "agent/workflows/general/2026-06-19-002.json",
-    "agent/threads/general/2026-06-19-002.md",
-    "agent/sessions/2026-06-19-005-엑셀-다양하게-컨트롤좀-해봐-너의-능력좀-테스트해보게.md",
-    "agent/sessions/2026-06-19-004-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
-    "agent/sessions/2026-06-19-003-배경-작업-완료-read_excel-결과-sh.md",
-    "agent/sessions/2026-06-19-002-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
-    "agent/sessions/2026-06-19-001-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
-    "agent/threads/general/2026-06-19-001.md",
-    "agent/run-ledgers/general/2026-06-19-001/12fef28daa89.jsonl",
-    "agent/workflows/general/2026-06-19-001.md",
-    "🏛 Categories.md",
-    "public/BiohPark-github-blog/index.md",
-    "public/git-blog/index.md",
-    "public/index.md",
-    "private/00. Inbox/📖 100 Career.md",
+    "private/10. Calendar Notes/2026-06-21.md",
+    "private/00. Inbox/2026-06-21.md",
+    "private/10. Calendar Notes/2026.md",
+    "private/10. Calendar Notes/2026-06.md",
+    "private/00. Inbox/2026-QQ.md",
+    "private/10. Calendar Notes/2026-W26.md",
+    "private/00. Inbox/obsidian 홈페이지 플러그인 개발.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Quarterly Note.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Yearly Note.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Montly Note.md",
+    "private/20. Projects/프로젝트 2.md",
+    "private/20. Projects/프로젝트 2_tasks/프로젝트-2---task-2.md",
+    "private/20. Projects/프로젝트 2_tasks/프로젝트-2---task1.md",
+    "private/20. Projects/프로젝트 2_tasks",
+    "private/20. Projects/test project.md",
+    "private/20. Projects/test project_tasks/test-project---milestone1---subtask1.md",
+    "private/20. Projects/test project_tasks/test-project---task1---subtask1.md",
+    "private/20. Projects/test project_tasks/test-project---milestone1.md",
+    "private/20. Projects/test project_tasks/test-project---task1.md",
+    "private/20. Projects/test project_tasks/test-project---task2.md",
+    "private/20. Projects/test project_tasks",
+    "private/00. Inbox/new-task2.md",
+    "private/10. Calendar Notes/2026-Q2.md",
+    "private/20. Projects",
+    "agent/workflows/general/2026-06-20-001_ledger.jsonl",
+    "agent/workflows/general/2026-06-20-001_state.json",
+    "agent/workflows/general/2026-06-20-001.md",
+    "agent/run-ledgers/general/2026-06-20-001/6563c727e490.jsonl",
+    "agent/run-ledgers/general/2026-06-20-001",
+    "agent/transcripts/general/2026-06-20-001.jsonl",
+    "agent/workflows/general/2026-06-20-001.json",
+    "agent/threads/general/2026-06-20-001.md",
     "🏛 Tasks Kanban.md",
-    "🏛 Tasks.md",
-    "private/10. Calendar Notes/2026-W25.md",
-    "private/10. Calendar Notes/2026-06-18.md",
-    "private/00. Inbox/2026-06.md",
-    "private/00. Inbox/2026-W25.md",
+    "새 폴더",
     "private/80. References/81. Attachments/Pasted image 20260612054533.png",
     "private/80. References/81. Attachments/20260505_111316.jpg",
     "private/80. References/81. Attachments/20260505_111251.jpg",

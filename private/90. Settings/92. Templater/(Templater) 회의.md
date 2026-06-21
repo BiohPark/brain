@@ -6,10 +6,10 @@ Indexes:
 People:
   - "[[@박비오 P MES Group]]"
 title:
-date_created: 2025-11-28 23:24
-date_modified: 2025-11-26T20:55:32+09:00
-date_requested: 2025-11-28
-date_due: 2025-12-05
+createdAt: 2025-11-18T21:58:32+09:00
+updatedAt: 2026-06-20T23:46:10+09:00
+date_requested:
+due:
 date_done:
 status: 진행
 공수:
