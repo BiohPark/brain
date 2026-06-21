@@ -7,7 +7,7 @@ Categories:
 Indexes:
   - "[[🏛 Utils]]"
 createdAt: 2026-06-14T00:00:00+09:00
-updatedAt: 2026-06-21T15:26:02+09:00
+updatedAt: 2026-06-21T16:19:43+09:00
 modified: 2026-06-20T13:21:34+09:00
 date_modified: 2026-06-21T14:47:42+09:00
 date_created: 2026-06-14T23:20:24+09:00
