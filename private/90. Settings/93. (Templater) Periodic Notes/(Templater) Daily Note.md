@@ -3,8 +3,8 @@ tags:
 Categories:
   - "[[📚710 Daily]]"
 Indexes:
-date_created: <% tp.date.now("YYYY-MM-DD HH:mm") %>
-date_modified:
+createdAt: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+updatedAt:
 ---
 <%*
 let today = moment(tp.file.title);

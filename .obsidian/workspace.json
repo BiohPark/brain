@@ -15,8 +15,8 @@
               "type": "markdown",
               "state": {
                 "file": "🏛 Home.md",
-                "mode": "source",
-                "source": false,
+                "mode": "preview",
+                "source": true,
                 "backlinks": true,
                 "backlinkOpts": {
                   "collapseAll": false,
@@ -34,31 +34,7 @@
             }
           },
           {
-            "id": "5380829b00d8ecb0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "private/00. Inbox/MES-agent 개발.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "MES-agent 개발"
-            }
-          },
-          {
-            "id": "44c2717f42b607cc",
+            "id": "51619a5dbad563d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -80,30 +56,6 @@
               "icon": "lucide-file",
               "title": "202606 옵시디언 지능화"
             }
-          },
-          {
-            "id": "9ccf077644522b48",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "202606 MES-ITSM 셋업.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "202606 MES-ITSM 셋업"
-            }
           }
         ]
       }
@@ -117,7 +69,7 @@
       {
         "id": "ed9cbd8155d3d7f0",
         "type": "tabs",
-        "dimension": 68.45637583892618,
+        "dimension": 68.50068775790922,
         "children": [
           {
             "id": "36e11904964d2316",
@@ -142,7 +94,7 @@
                 "kanbanViewState": {
                   "kanban-plugin": "list",
                   "list-collapse": [
-                    false,
+                    true,
                     false,
                     false
                   ]
@@ -150,6 +102,16 @@
               },
               "icon": "lucide-trello",
               "title": "🏛 Tasks Kanban"
+            }
+          },
+          {
+            "id": "d0eded38520f9c5a",
+            "type": "leaf",
+            "state": {
+              "type": "pm-dashboard",
+              "state": {},
+              "icon": "chart-gantt",
+              "title": "Projects"
             }
           },
           {
@@ -177,13 +139,37 @@
             }
           },
           {
-            "id": "2c8b342cc459947c",
+            "id": "f048c36c392dd8bf",
             "type": "leaf",
             "state": {
-              "type": "git-view",
+              "type": "markdown",
+              "state": {
+                "file": "🏛 Categories Tree.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "🏛 Categories Tree"
+            }
+          },
+          {
+            "id": "0a8e2000eaa4c072",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -191,7 +177,7 @@
       {
         "id": "65f91f28bd6933a3",
         "type": "tabs",
-        "dimension": 31.543624161073826,
+        "dimension": 31.49931224209078,
         "children": [
           {
             "id": "a97481ab389c9975",
@@ -245,7 +231,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 458.5
+    "width": 339.5
   },
   "right": {
     "id": "98e34de261fe700a",
@@ -254,7 +240,7 @@
       {
         "id": "abab4bbb81360994",
         "type": "tabs",
-        "dimension": 57.47330960854092,
+        "dimension": 74.02597402597402,
         "children": [
           {
             "id": "9f9b8f6fdaba2810",
@@ -360,12 +346,12 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 4
       },
       {
         "id": "e0e75e2511b3d166",
         "type": "tabs",
-        "dimension": 42.52669039145908,
+        "dimension": 25.97402597402597,
         "children": [
           {
             "id": "19e33a8f591eb237",
@@ -373,12 +359,12 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "itsm",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
-                "sortOrder": "alphabetical"
+                "sortOrder": "byModifiedTime"
               },
               "icon": "lucide-search",
               "title": "Search"
@@ -401,7 +387,7 @@
               "type": "all-properties",
               "state": {
                 "sortOrder": "frequency",
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-archive",
@@ -427,10 +413,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 715.5
+    "width": 658.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "periodic-notes:Open today": false,
       "canvas:Create new canvas": false,
       "bases:Create new base": false,
       "omnisearch:Omnisearch": false,
@@ -450,50 +437,51 @@
       "switcher:Open quick switcher": false,
       "homepage:Open homepage": false,
       "obsidian-spaced-repetition:Review flashcards": false,
-      "obsidian-textgenerator-plugin:Generate Text!": false,
-      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false,
       "obsidian-git:Open Git source control": false,
-      "realclaudian:Open Claudian": false
+      "realclaudian:Open Claudian": false,
+      "obsidian-projects:Open projects": false,
+      "project-manager:Project manager": false,
+      "obsidian-textgenerator-plugin:Generate Text!": false,
+      "obsidian-textgenerator-plugin:Text Generator: Templates Packages Manager": false
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "private/00. Inbox/202606 옵시디언 지능화.md",
     "🏛 Home.md",
-    "202606 MES-ITSM 셋업.md",
-    "private/00. Inbox/MES-agent 개발.md",
-    "새 폴더",
-    "private/80. References/81. Attachments/처우안내 비교표(박비오).xlsx",
-    "agent/workflows/general/2026-06-11-001_state.json",
-    "agent/workflows/general/2026-06-13-001_state.json",
-    "agent/workflows/general/2026-06-10-001_state.json",
-    "agent/workflows/general/2026-06-12-002_state.json",
-    "agent/workflows/general/2026-06-12-001_state.json",
-    "agent/workflows/obsidian/2026-06-13-001.json",
-    "agent/workflows/obsidian/2026-06-10-001.json",
-    "agent/workflows/syncade/2026-06-10-001.json",
-    "🏷 invest.md",
-    "agent/threads/general/2026-06-19-002.md",
-    "agent/workflows/general/2026-06-19-002.md",
-    "agent/sessions/2026-06-19-005-엑셀-다양하게-컨트롤좀-해봐-너의-능력좀-테스트해보게.md",
-    "agent/sessions/2026-06-19-004-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
-    "agent/sessions/2026-06-19-002-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
-    "agent/sessions/2026-06-19-003-배경-작업-완료-read_excel-결과-sh.md",
-    "agent/sessions/2026-06-19-001-엑셀-열어서-11이-2가-맞는지-테스트-검증해보자.md",
-    "agent/threads/general/2026-06-19-001.md",
-    "agent/workflows/general/2026-06-19-001.md",
-    "public/BiohPark-github-blog/index.md",
-    "private/10. Calendar Notes/2026-W25.md",
-    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Yearly Note.md.md",
-    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Quartly Note.md.md",
-    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Montly Note.md.md",
-    "private/10. Calendar Notes/2026-06-18.md",
-    "private/10. Calendar Notes/2026-06-17.md",
-    "private/00. Inbox/2025 해외주식 소득.md",
+    "private/10. Calendar Notes/2026-06-21.md",
+    "🏛 Home.md.tmp.164964.a01562b490aa",
+    "private/20. Projects/test project.md",
+    "🏛 Home.md.tmp.164964.4413fd0e4163",
+    "🏛 Home.md.tmp.164964.dc8fe148dc00",
+    "private/00. Inbox/2026-06-21.md",
+    "private/10. Calendar Notes/2026-W26.md",
+    "private/10. Calendar Notes/2026.md",
+    "private/10. Calendar Notes/2026-Q2.md",
+    "private/10. Calendar Notes/2026-06.md",
+    "🏛 Home.md.tmp.164964.73a2beba366a",
+    "private/00. Inbox/2026-QQ.md",
+    "private/00. Inbox/2026-W25.md",
+    "private/00. Inbox/2026-06.md",
+    "private/00. Inbox/2026.md",
+    "🏛 Home.md.tmp.164964.3654cedd444a",
+    "🏛 Home.md.tmp.164964.aa2a0ce92773",
+    "🏛 Home.md.tmp.164964.d38aa942936a",
+    "🏛 Home.md.tmp.164964.9475ba8757b8",
+    "🏛 Home.md.tmp.164964.1604e8d81c9a",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Quarterly Note.md.tmp.164964.4f52bf75233a",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Quarterly Note.md",
+    "private/00. Inbox/obsidian 홈페이지 플러그인 개발.md",
     "🏛 Categories Tree.md",
-    "🔍 카테고리별 노트.md",
-    "claude/_index.md",
-    "🏛 Categories.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Weekly Note.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/daily.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Montly Note.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/monthly.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/weekly.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/yearly.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Yearly Note.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Quartly Note.md.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Yearly Note.md.md",
     "private/80. References/81. Attachments/Pasted image 20260612054533.png",
     "private/80. References/81. Attachments/20260505_111316.jpg",
     "private/80. References/81. Attachments/20260505_111251.jpg",

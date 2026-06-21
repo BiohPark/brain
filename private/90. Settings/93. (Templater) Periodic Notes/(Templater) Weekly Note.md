@@ -3,8 +3,8 @@ tags:
 Categories:
   - "[[📚720 Weekly]]"
 Indexes:
-date_created: <% tp.date.now("YYYY-MM-DD HH:mm") %>
-date_modified:
+createdAt: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+updatedAt:
 ---
 <%*
 let weekMoment = moment(tp.file.title);

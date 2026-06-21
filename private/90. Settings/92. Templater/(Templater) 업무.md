@@ -5,10 +5,10 @@ Indexes:
 People:
   - "[[@박비오]]"
 title: (Templater) 업무
-date_created: 2025-11-28 23:24
-date_modified: 2025-11-26T20:55:19+09:00
-date_requested: 2025-11-28 23:24
-date_due: 2025-11-28 23:247
+createdAt: 2025-03-21T21:19:49+09:00
+updatedAt: 2026-06-20T23:46:29+09:00
+date_requested:
+due:
 date_done:
 status: wait
 ---

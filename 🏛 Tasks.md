@@ -6,8 +6,8 @@ Categories:
 Indexes:
   - "[[🏛 Weekly Notes]]"
   - "[[🏛 Tasks Kanban]]"
-date_created: 2025-03-21 23:10:21
-date_modified: 2025-11-26T20:43:17+09:00
+createdAt: 2025-03-21 23:10:21
+updatedAt: 2025-11-26T20:43:17+09:00
 modified: 2026-06-18T21:28:24+09:00
 ---
 ## 🔴 지연

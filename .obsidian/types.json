@@ -55,6 +55,10 @@
     "TQ_show_task_count": "checkbox",
     "TQ_show_toolbar": "checkbox",
     "TQ_show_tree": "checkbox",
-    "TQ_show_urgency": "checkbox"
+    "TQ_show_urgency": "checkbox",
+    "due": "date",
+    "date_done": "date",
+    "createdAt": "datetime",
+    "updatedAt": "datetime"
   }
 }
