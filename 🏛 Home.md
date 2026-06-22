@@ -7,7 +7,7 @@ Categories:
 Indexes:
   - "[[🏛 Utils]]"
 createdAt: 2026-06-14T00:00:00+09:00
-updatedAt: 2026-06-21T16:19:43+09:00
+updatedAt: 2026-06-23T07:34:56+09:00
 modified: 2026-06-20T13:21:34+09:00
 date_modified: 2026-06-21T14:47:42+09:00
 date_created: 2026-06-14T23:20:24+09:00
@@ -61,8 +61,8 @@ const FAVLINKS = [
   { type: 'note',    label: '🏷 Invest',       href: '🏷 invest' },
   { type: 'note',    label: '🏷 Manual',       href: '🏷 Manual' },
   { type: 'divider' },
-  { type: 'folder',  label: 'mes-agent', path: 'D:\\_Repositories\\mes-agent' },
-  { type: 'folder',  label: 'brain',     path: 'D:\\_Archives\\obsidian\\brain' },
+  { type: 'folder',  label: 'mes-agent', path: 'D:\\GithubRepositories==s\\mes-agent' },
+  { type: 'folder',  label: 'brain',     path: 'D:\\archive\\obsidian\\brain' },
   { type: 'url',     label: 'mes-agent ↗', url: 'https://github.com/BiohPark/mes-agent' },
 ];
 const favHTML = FAVLINKS.map(f => {
