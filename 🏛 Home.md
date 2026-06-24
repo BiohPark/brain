@@ -7,10 +7,10 @@ Categories:
 Indexes:
   - "[[🏛 Utils]]"
 createdAt: 2026-06-14T00:00:00+09:00
-updatedAt: 2026-06-23T07:34:56+09:00
+updatedAt: 2026-06-24T23:23:53+09:00
 modified: 2026-06-20T13:21:34+09:00
-date_modified: 2026-06-21T14:47:42+09:00
-date_created: 2026-06-14T23:20:24+09:00
+date_modified: 2026-06-24T07:36:11+09:00
+date_created: 2026-06-23T21:03:53+09:00
 ---
 
 ```dataviewjs
