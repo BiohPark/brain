@@ -1,6 +1,0 @@
-title: Bioh Park Blog
-description: "github pages Test"
-baseurl: "" 
-url: "https://BiohPark.github.io"
-
-theme: minima   # 깔끔한 기본 테마
