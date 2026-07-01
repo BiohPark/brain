@@ -1,3 +1,7 @@
+---
+updated: 2026-06-25T00:07:50+09:00
+created: 2026-06-14T01:52:16+09:00
+---
 # CLAUDE.md — 이 Obsidian Vault 관리 규칙
 
 이 저장소는 사용자의 **개인 Obsidian vault**이자 **개인 RAG**다. Claude Code(이 에이전트)는 이 vault를
@@ -78,8 +82,8 @@ Indexes:                   # 2차 인덱스. 🏷 인덱스 노트와 연계. [[
   - "[[🏛 Utils]]"
 People:                    # 연관된 사람. [[@이름]] 배열
   - "[[@박비오]]"
-date_created: 2026-06-14T00:00:00+09:00   # ISO 8601
-date_modified:
+created: 2026-06-14T00:00:00+09:00   # ISO 8601
+updated:
 status:                    # (업무 노트) wait | 진행 | 완료 | 보류
 ---
 ```

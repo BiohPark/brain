@@ -4,9 +4,10 @@ Categories:
 tags:
 Indexes:
   - "[[🏛 Utils]]"
-createdAt: 2025-03-13T21:15:00
-updatedAt: 2026-06-14T12:00:00+09:00
-modified: 2026-06-20T13:21:30+09:00
+created: 2025-03-13T21:15:00
+updated: 2026-06-14T12:00:00+09:00
+updatedAt: 2026-06-25T22:08:24+09:00
+createdAt: 2025-11-23T18:48:15+09:00
 ---
 
 > 📊 [[🏛 Categories Tree|시각화로 보기 →]]

@@ -3,8 +3,8 @@ tags:
 Categories:
 Indexes:
   - "[[🏛 Categories]]"
-createdAt: 2026-06-15T00:00:00+09:00
-updatedAt: 2026-06-21T15:50:36+09:00
+created: 2026-06-15T00:00:00+09:00
+updated: 2026-06-21T15:50:36+09:00
 ---
 
 ```dataviewjs

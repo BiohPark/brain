@@ -3,41 +3,23 @@ tags:
 Categories:
   - "[[📚740 Quaterly]]"
 Indexes:
-createdAt: <% tp.date.now("YYYY-MM-DD HH:mm") %>
-updatedAt:
+created: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+updated:
 ---
 <%*
-let parts = tp.file.title.split("-Q");
-let m = moment([parseInt(parts[0], 10)]).quarter(parseInt(parts[1], 10)).startOf('quarter');
-
-// # 2026 Q2
-tR += '# ' + m.format('YYYY [Q]Q') + '\n';
-
-// 2026
-tR += '[[' + m.format('YYYY') + ']]';
-tR += '\n';
-
-// ❮ 2026-Q1 | 2026-Q2 | 2026-Q3 ❯
-tR += '❮ [[' + m.clone().subtract(1, 'quarter').format('YYYY-[Q]Q') + ']]';
-tR += ' | ' + m.format('YYYY-[Q]Q') + ' | ';
-tR += '[[' + m.clone().add(1, 'quarter').format('YYYY-[Q]Q') + ']] ❯';
-tR += '\n';
-
-// April - May - June
-let qStart = m.clone().startOf('quarter');
-for (let i = 0; i < 3; i++) {
-    let mo = qStart.clone().add(i, 'month');
-    tR += '[[' + mo.format('YYYY-MM') + '|' + mo.format('MMMM') + ']]';
-    if (i < 2) tR += ' - ';
-}
+let m = moment(tp.file.title, "YYYY-[Q]Q");
+tR += '# ' + m.format('YYYY-[Q]Q') + '\n';
+tR += '[[' + m.format('YYYY') + ']]\n';
+tR += '❮ [[' + m.clone().subtract(1, 'quarters').format('YYYY-[Q]Q') + ']] | ' + m.format('YYYY-[Q]Q') + ' | [[' + m.clone().add(1, 'quarters').format('YYYY-[Q]Q') + ']] ❯\n';
+tR += '[[' + m.clone().startOf('quarter').format('YYYY-MM|MMMM') + ']] - [[' + m.clone().startOf('quarter').add(1, 'months').format('YYYY-MM|MMMM') + ']] - [[' + m.clone().startOf('quarter').add(2, 'months').format('YYYY-MM|MMMM') + ']]\n';
 %>
 
 ---
 
 ### 당분기 완료
 ```tasks
-done after <% moment([+tp.file.title.split("-Q")[0]]).quarter(+tp.file.title.split("-Q")[1]).startOf('quarter').subtract(1,'day').format("YYYY-MM-DD") %>
-done before <% moment([+tp.file.title.split("-Q")[0]]).quarter(+tp.file.title.split("-Q")[1]).endOf('quarter').add(1,'day').format("YYYY-MM-DD") %>
+done after <% moment(tp.file.title, "YYYY-[Q]Q").startOf('quarter').subtract(1, 'days').format('YYYY-MM-DD') %>
+done before <% moment(tp.file.title, "YYYY-[Q]Q").endOf('quarter').add(1, 'days').format('YYYY-MM-DD') %>
 ```
 ```dataview
 TABLE choice(ProjectView_URL, "["+ProjectView+"]("+ProjectView+URL+")","") AS PV, 완료일 as 완료
@@ -48,8 +30,8 @@ AND dateformat(완료일, "q") = string(split(this.file.name, "-Q")[1])
 
 ### 당분기 납기
 ```tasks
-due after <% moment([+tp.file.title.split("-Q")[0]]).quarter(+tp.file.title.split("-Q")[1]).startOf('quarter').subtract(1,'day').format("YYYY-MM-DD") %>
-due before <% moment([+tp.file.title.split("-Q")[0]]).quarter(+tp.file.title.split("-Q")[1]).endOf('quarter').add(1,'day').format("YYYY-MM-DD") %>
+due after <% moment(tp.file.title, "YYYY-[Q]Q").startOf('quarter').subtract(1, 'days').format('YYYY-MM-DD') %>
+due before <% moment(tp.file.title, "YYYY-[Q]Q").endOf('quarter').add(1, 'days').format('YYYY-MM-DD') %>
 ```
 ```dataview
 TABLE choice(ProjectView_URL, "["+ProjectView+"]("+ProjectView+URL+")","") AS PV, 납기일 as 납기
@@ -59,3 +41,4 @@ AND date(납기일).year = number(split(this.file.name, "-")[0])
 AND dateformat(납기일, "q") = string(split(this.file.name, "-Q")[1])
 ```
 ### Quarterly 기록
+

@@ -29,7 +29,6 @@
     "Categories": "multitext",
     "created": "datetime",
     "People": "multitext",
-    "modified": "datetime",
     "author": "multitext",
     "CMDS": "multitext",
     "excalidraw-export-internal-links": "checkbox",
@@ -59,6 +58,7 @@
     "due": "date",
     "date_done": "date",
     "createdAt": "datetime",
-    "updatedAt": "datetime"
+    "updatedAt": "datetime",
+    "updated": "datetime"
   }
 }

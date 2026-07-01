@@ -61,7 +61,7 @@
             }
           },
           {
-            "id": "faa9db38c120eceb",
+            "id": "ea7bc0e47c9efad2",
             "type": "leaf",
             "state": {
               "type": "kanban",
@@ -70,7 +70,7 @@
                 "kanbanViewState": {
                   "kanban-plugin": "list",
                   "list-collapse": [
-                    false,
+                    true,
                     false,
                     false
                   ]
@@ -233,7 +233,7 @@
       {
         "id": "f44b0c3c57e53b7e",
         "type": "tabs",
-        "dimension": 75.25458248472505,
+        "dimension": 46.68705402650357,
         "children": [
           {
             "id": "c873954e28e27ec7",
@@ -253,13 +253,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "🏛 Tasks.md",
+                "file": "🏛 Home.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 🏛 Tasks"
+              "title": "Outline of 🏛 Home"
             }
           },
           {
@@ -311,8 +311,8 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "review-queue-list-view"
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
             }
           },
           {
@@ -326,7 +326,7 @@
             }
           },
           {
-            "id": "102a8ef54191cdf3",
+            "id": "d36220195545ebc7",
             "type": "leaf",
             "state": {
               "type": "graph-analysis",
@@ -336,12 +336,12 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       },
       {
         "id": "0a79c9d83abfb6da",
         "type": "tabs",
-        "dimension": 24.745417515274948,
+        "dimension": 53.312945973496426,
         "children": [
           {
             "id": "2eaca2ff6e4adaba",
@@ -381,7 +381,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-archive",
-              "title": "모든 속성"
+              "title": "All properties"
             }
           },
           {
@@ -396,14 +396,14 @@
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
-              "title": "태그"
+              "title": "Tags"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 582.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -432,44 +432,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "186cb8ec7e2221c8",
   "lastOpenFiles": [
-    "private/00. Inbox/202606 옵시디언 지능화.md",
     "🏛 Home.md",
+    "private/00. Inbox/08. Unlisted/사랑의 기술 - 에리히 프롬.md",
+    "private/00. Inbox/08. Unlisted/신춘문 HAE.md",
+    "private/00. Inbox/08. Unlisted/왜 나는 너를 사랑하는가 - 알랭드보통.md",
+    "private/00. Inbox/08. Unlisted/철학의 위안 - 알랭드보통.md",
+    "private/00. Inbox/2026 자격증 준비.md",
     "private/00. Inbox/MES-agent 개발.md",
+    "🏛 Tasks Kanban.md",
+    "private/00. Inbox/(MES 딥다이브) 커리어 관리 velog Series.md",
+    "private/00. Inbox/이탈리아 ChatGPT ver1.1.md",
+    "private/00. Inbox/판테온.md",
+    "private/00. Inbox/이탈리아 gemini ver1.1.md",
+    "private/00. Inbox/이탈리아 신혼여행.md",
+    "private/00. Inbox/이탈리아 gemini ver 1.0.md",
+    "private/00. Inbox/이탈리아 chatGPT ver 1.0.md",
+    "private/00. Inbox/Untitled.md",
+    "private/00. Inbox/202606 옵시디언 지능화.md",
+    "private/10. Calendar Notes/2026-06-25.md",
+    "private/90. Settings/94. (Templater) Scripts/periodic notes router.md",
+    "private/10. Calendar Notes/2027.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Montly Note.md",
+    "private/90. Settings/93. (Templater) Periodic Notes/(Templater) Daily Note.md",
+    "private/10. Calendar Notes/2027.md",
+    "private/10. Calendar Notes/2026-06.md",
+    "private/10. Calendar Notes/2026-07.md",
+    "private/10. Calendar Notes/2026-Q3.md",
+    "private/90. Settings/94. (Templater) Scripts",
+    "public/_config.yml",
     "agent/workflows/gmp-validation/2026-06-24-004_ledger.jsonl",
     "agent/workflows/gmp-validation/2026-06-24-004_state.json",
-    "agent/workflows/gmp-validation/2026-06-24-004.md",
     "agent/run-ledgers/gmp-validation/2026-06-24-004/381acccfbfa6.jsonl",
     "agent/run-ledgers/gmp-validation/2026-06-24-004",
     "agent/transcripts/gmp-validation/2026-06-24-004.jsonl",
     "agent/workflows/gmp-validation/2026-06-24-004.json",
-    "agent/threads/gmp-validation/2026-06-24-004.md",
     "agent/workflows/gmp-validation/2026-06-24-003_ledger.jsonl",
     "agent/workflows/gmp-validation/2026-06-24-003_state.json",
-    "agent/workflows/gmp-validation/2026-06-24-003.md",
-    "agent/run-ledgers/gmp-validation/2026-06-24-003/8be026f65c7f.jsonl",
-    "agent/run-ledgers/gmp-validation/2026-06-24-003",
-    "agent/threads/gmp-validation/2026-06-24-003.md",
-    "agent/workflows/gmp-validation/2026-06-24-002.md",
-    "agent/threads/gmp-validation/2026-06-24-002.md",
-    "agent/workflows/gmp-validation/2026-06-24-001.md",
-    "agent/threads/gmp-validation/2026-06-24-001.md",
-    "agent/threads/gmp-validation/2026-06-23-007.md",
-    "agent/threads/gmp-validation/2026-06-23-006.md",
-    "agent/threads/gmp-validation/2026-06-23-005.md",
-    "agent/threads/gmp-validation/2026-06-23-004.md",
-    "agent/threads/gmp-validation/2026-06-23-003.md",
-    "agent/threads/gmp-validation/2026-06-23-002.md",
-    "agent/threads/gmp-validation/2026-06-23-001.md",
-    "agent/threads/_archive/gmp-validation/_index.md",
-    "agent/threads/gmp-validation/_index.md",
-    "🏛 Categories Tree.md",
-    "agent/records/배치보류처리_2026-06-21.md",
-    "_verification_test/보류배치처리절차.md",
-    "AGENTS.md",
-    "private/00. Inbox/obsidian 홈페이지 플러그인 개발.md",
-    "private/00. Inbox/커리어 관리.md",
     "private/80. References/81. Attachments/Pasted image 20260612054533.png",
     "private/80. References/81. Attachments/20260505_111316.jpg",
     "private/80. References/81. Attachments/20260505_111251.jpg",

@@ -6,11 +6,10 @@ Categories:
   - "[[📚630 KnowledgeManagement]]"
 Indexes:
   - "[[🏛 Utils]]"
-createdAt: 2026-06-14T00:00:00+09:00
-updatedAt: 2026-06-24T23:48:19+09:00
-modified: 2026-06-20T13:21:34+09:00
-date_modified: 2026-06-24T07:36:11+09:00
-date_created: 2026-06-23T21:03:53+09:00
+created: 2026-06-14T00:00:00+09:00
+updated: 2026-06-28T19:07:39+09:00
+updatedAt: 2026-06-25T22:08:28+09:00
+createdAt: 2026-06-14T23:20:24+09:00
 ---
 
 ```dataviewjs
@@ -102,7 +101,7 @@ root.querySelectorAll('[data-capture]').forEach(b => b.onclick = async (e) => {
   // 폴백: Inbox에 타임스탬프 노트 직접 생성 후 열기
   const ts = now.toFormat('yyyy-MM-dd-HHmmss');
   const path = `${inboxFolder}/${ts}.md`;
-  const f = await app.vault.create(path, `---\ncreatedAt: ${now.toISO()}\ntags:\n---\n\n# \n`);
+  const f = await app.vault.create(path, `---\ncreated: ${now.toISO()}\ntags:\n---\n\n# \n`);
   app.workspace.getLeaf(false).openFile(f);
 });
 ```
@@ -150,7 +149,7 @@ async function openOrCreatePeriodic(type, noteName, cur) {
 }
 
 // ── Momentum (기존 로직) ──────────────────────────────
-function cd(p){ const d=p.createdAt; if(!d) return p.file.ctime; return d.toFormat?d:DT.fromISO(String(d)); }
+function cd(p){ const d=p.created; if(!d) return p.file.ctime; return d.toFormat?d:DT.fromISO(String(d)); }
 const wStart = now.startOf('week');
 const wPrev  = wStart.minus({weeks:1});
 const mStart = now.startOf('month');
@@ -170,7 +169,7 @@ for(const p of pages){
     if(c>=qStart) thisQuarter++;
     if(c>=yStart) thisYear++;
   }
-  const md=p.updatedAt; const mk=md&&md.toFormat?md.toFormat('yyyy-MM-dd'):null;
+  const md=p.updated; const mk=md&&md.toFormat?md.toFormat('yyyy-MM-dd'):null;
   if(mk===todayK) todayMod++;
 }
 const delta=thisWeek-lastWeek;
@@ -202,10 +201,10 @@ for(const p of pages){ for(const t of p.file.tasks){
 // ── Recently Edited (기존 dataview TABLE과 동일 조건, 10개) ──
 const recentArr=[];
 for(const p of pages){
-  const md=p.updatedAt;
+  const md=p.updated;
   if(md && md.toFormat && !p.file.folder.includes('30. Secrit Notes')) recentArr.push(p);
 }
-recentArr.sort((a,b)=>b.updatedAt.toMillis()-a.updatedAt.toMillis());
+recentArr.sort((a,b)=>b.updated.toMillis()-a.updated.toMillis());
 const recent=recentArr.slice(0,10);
 
 const root=dv.el('div','',{cls:'dash-pulse-strip'});
@@ -400,7 +399,7 @@ try { const pn = JSON.parse(await app.vault.adapter.read('.obsidian/plugins/peri
 function key(d){ if(!d) return null; if(d.toFormat) return d.toFormat('yyyy-MM-dd'); const x=DT.fromISO(String(d)); return x.isValid?x.toFormat('yyyy-MM-dd'):null; }
 const counts={}, byDay={};
 for(const p of pages){
-  const k = key(p.updatedAt) || key(p.createdAt) || key(p.file.mtime);
+  const k = key(p.updated) || key(p.created) || key(p.file.mtime);
   if(!k) continue;
   counts[k]=(counts[k]||0)+1;
   if(!p.file.folder.includes('30. Secrit Notes')) (byDay[k]=byDay[k]||[]).push(p);
@@ -496,7 +495,7 @@ const DT = dv.luxon.DateTime;
 const monthly={}, mod={}, linksByMonth={}, orphanByMonth={}, catMonthly={}, dailyByMonth={};
 const weekdayCnt=[0,0,0,0,0,0,0];   // 월..일
 for(const p of pages){
-  const cdt = (p.createdAt && p.createdAt.toFormat) ? p.createdAt : (p.file.ctime||null);
+  const cdt = (p.created && p.created.toFormat) ? p.created : (p.file.ctime||null);
   const cm = cdt ? cdt.toFormat('yyyy-MM') : null;
   if(cm){
     monthly[cm]=(monthly[cm]||0)+1;
@@ -505,7 +504,7 @@ for(const p of pages){
     if(p.Categories) for(const c of p.Categories){ const nm=(c.path||String(c)).split('/').pop().replace(/\.md$/,''); (catMonthly[nm]=catMonthly[nm]||{}); catMonthly[nm][cm]=(catMonthly[nm][cm]||0)+1; }
     if(cdt.weekday) weekdayCnt[cdt.weekday-1]++;
   }
-  const md=(p.updatedAt&&p.updatedAt.toFormat)?p.updatedAt:null;
+  const md=(p.updated&&p.updated.toFormat)?p.updated:null;
   const mm=md?md.toFormat('yyyy-MM'):null; if(mm) mod[mm]=(mod[mm]||0)+1;
   if(/^\d{4}-\d{2}-\d{2}$/.test(p.file.name)){ const dm=p.file.name.slice(0,7); dailyByMonth[dm]=(dailyByMonth[dm]||0)+1; }   // 데일리 노트
 }

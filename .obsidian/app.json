@@ -8,7 +8,7 @@
   "foldIndent": true,
   "smartIndentList": true,
   "alwaysUpdateLinks": true,
-  "useMarkdownLinks": true,
+  "useMarkdownLinks": false,
   "userIgnoreFilters": [
     "node_modules/",
     "src/",
